@@ -21,7 +21,7 @@ export default function AboutPage() {
       <section className="relative flex min-h-[70vh] items-center justify-center overflow-hidden pt-20">
         <div className="absolute inset-0 z-0">
           <Image
-            src="/about.jpg?height=800&width=1920&text=About+Us"
+            src="/about.JPG?height=800&width=1920&text=About+Us"
             alt="About Us"
             fill
             className="object-cover"
@@ -290,10 +290,10 @@ export default function AboutPage() {
 
             <div className="relative">
               <Image
-                src="/whatwedo.jpg?height=600&width=500"
+                src="/whatwedo.JPG?height=600&width=500"
                 alt="Indonesian Club Activities"
                 width={500}
-                height={600}
+                height={600}  
                 className="rounded-lg shadow-xl"
               />
               <div className="absolute -bottom-6 -right-6 h-32 w-32 rounded-full bg-gradient-to-br from-secondary-400 to-secondary-500 opacity-20"></div>

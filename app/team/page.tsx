@@ -307,7 +307,7 @@ export default function TeamPage() {
       <section className="relative flex min-h-[60vh] items-center justify-center overflow-hidden pt-20">
         <div className="absolute inset-0 z-0">
           <Image
-            src="/team.jpg?height=800&width=1920&text=Team+Photo"
+            src="/team.JPG?height=800&width=1920&text=Team+Photo"
             alt="Team Photo"
             fill
             className="object-cover"

@@ -317,7 +317,7 @@ export default function AlumniPage() {
       <section className="relative flex min-h-[60vh] items-center justify-center overflow-hidden pt-20">
         <div className="absolute inset-0 z-0">
           <Image
-            src="/alumni.jpg?height=800&width=1920&text=Alumni+Network"
+            src="/alumni.JPG?height=800&width=1920&text=Alumni+Network"
             alt="Alumni Network"
             fill
             className="object-cover"

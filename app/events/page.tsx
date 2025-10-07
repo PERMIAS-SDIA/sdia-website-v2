@@ -412,7 +412,7 @@ export default function EventsPage() {
       <section className="relative flex min-h-[60vh] items-center justify-center overflow-hidden pt-20">
         <div className="absolute inset-0 z-0">
           <Image
-            src="/events.jpg?height=800&width=1920&text=SDIA+Events"
+            src="/events.JPG?height=800&width=1920&text=SDIA+Events"
             alt="SDIA Events"
             fill
             className="object-cover"

@@ -242,7 +242,7 @@ export default function HomePage() {
             <div className="relative">
               <div className="overflow-hidden rounded-2xl shadow-2xl">
                 <Image
-                  src="/mission.jpg"
+                  src="/mission.JPG"
                   alt="SDIA Group Photo"
                   width={600}
                   height={400}
@@ -259,7 +259,7 @@ export default function HomePage() {
             <div className="relative order-2 lg:order-1">
               <div className="overflow-hidden rounded-2xl shadow-2xl">
                 <Image
-                  src="/vision.jpg?height=400&width=600&text=Vision+Group+Photo"
+                  src="/vision.JPG?height=400&width=600&text=Vision+Group+Photo"
                   alt="SDIA Vision Photo"
                   width={600}
                   height={400}
