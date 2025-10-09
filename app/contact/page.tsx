@@ -244,7 +244,7 @@ export default function ContactPage() {
                 <div className="grid grid-cols-1 gap-8 text-center md:grid-cols-2">
                   <div>
                     <h4 className="mb-2 font-semibold text-gray-800">Email</h4>
-                    <p className="text-gray-600">sdia@ucsd.edu</p>
+                    <p className="text-gray-600">permias.sandiego@gmail.com</p>
                   </div>
                   <div>
                     <h4 className="mb-2 font-semibold text-gray-800">

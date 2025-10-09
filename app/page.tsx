@@ -12,6 +12,7 @@ import {
   Eye,
   ArrowRight,
   Play,
+  ChevronDown,
 } from "lucide-react";
 import Image from "next/image";
 import { useEffect, useState } from "react";
@@ -140,7 +141,8 @@ export default function HomePage() {
           {/* Social Media Icons */}
           <div className="mb-8 flex justify-center space-x-6">
             <a
-              href="#"
+              href="https://www.instagram.com/permias.sdia"
+              target="_blank"
               className="group rounded-full bg-white bg-opacity-20 p-3 transition-all duration-300 hover:bg-opacity-30"
             >
               <svg
@@ -152,7 +154,8 @@ export default function HomePage() {
               </svg>
             </a>
             <a
-              href="#"
+              href="https://www.linkedin.com/company/permias-san-diego"
+              target="_blank"
               className="group rounded-full bg-white bg-opacity-20 p-3 transition-all duration-300 hover:bg-opacity-30"
             >
               <svg
@@ -178,18 +181,19 @@ export default function HomePage() {
               variant="outline"
               size="lg"
               className="rounded-full border-2 border-white bg-white/10 px-8 py-4 text-lg font-semibold text-white backdrop-blur-sm transition-all duration-300 hover:bg-white hover:text-primary-600"
+              asChild
             >
-              <Play className="mr-2 h-5 w-5" />
-              Upcoming Events
+              <a href="/events">
+                <Play className="mr-2 h-5 w-5" />
+                Upcoming Events
+              </a>
             </Button>
           </div>
         </div>
 
         {/* Scroll Indicator */}
         <div className="absolute bottom-8 left-1/2 -translate-x-1/2 transform animate-bounce">
-          <div className="flex h-10 w-6 justify-center rounded-full border-2 border-white/50">
-            <div className="mt-2 h-3 w-1 animate-pulse rounded-full bg-white/70"></div>
-          </div>
+          <ChevronDown className="h-8 w-8 text-white/80 transition-colors hover:text-white" />
         </div>
       </section>
 
@@ -479,7 +483,7 @@ export default function HomePage() {
 
           <div className="mt-8 border-t border-gray-800 pt-8 text-center text-gray-400">
             <p>
-              &copy; 2024 SDIA - San Diego Indonesian Association. All rights
+              &copy; 2025 SDIA - San Diego Indonesian Association. All rights
               reserved.
             </p>
           </div>
