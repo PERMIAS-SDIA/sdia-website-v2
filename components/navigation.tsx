@@ -36,8 +36,7 @@ export function Navigation() {
   }, []);
 
   const isActivePage = (path: string) => {
-    if (path === "/" && currentPath === "/") return true;
-    if (path !== "/" && currentPath.startsWith(path)) return true;
+    if (path === currentPath) return true;
     return false;
   };
 
@@ -77,7 +76,8 @@ export function Navigation() {
             About
           </a>
 
-          {/* People Dropdown */}
+          {/* People Dropdown TODO: CHANGE TO TRUE WHEN PEOPLE PAGES ARE READY*/}
+          {false && (
           <div
             className="relative"
             onMouseEnter={() => handleDropdownEnter("people")}
@@ -113,7 +113,9 @@ export function Navigation() {
               </div>
             )}
           </div>
+        )}
 
+          {/* Events Dropdown */}
           <a
             href="/events"
             className={`rounded-full px-5 py-1.5 text-sm font-medium transition-colors ${
