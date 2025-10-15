@@ -21,6 +21,8 @@ import {
 } from "lucide-react";
 import Image from "next/image";
 import { useState } from "react";
+import Footer from "@/components/footer";
+import CTA from "@/components/cta";
 
 interface AlumniMember {
   id: number;
@@ -477,138 +479,8 @@ export default function AlumniPage() {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="bg-gradient-to-r from-primary-600 to-primary-700 py-20">
-        <div className="mx-auto max-w-4xl px-4 text-center">
-          <h2 className="mb-6 text-4xl font-bold text-white md:text-5xl">
-            Join Our Alumni Network
-          </h2>
-          <p className="mx-auto mb-8 max-w-2xl text-xl text-primary-100">
-            Stay connected with fellow graduates and help current students
-            succeed
-          </p>
-          <div className="flex flex-col justify-center gap-4 sm:flex-row">
-            <Button
-              size="lg"
-              className="rounded-full bg-secondary-400 px-8 py-4 text-lg font-semibold text-secondary-900 shadow-lg transition-all duration-300 hover:bg-secondary-500 hover:shadow-xl"
-            >
-              Update Your Profile
-            </Button>
-            <Button
-              variant="outline"
-              size="lg"
-              className="rounded-full border-2 border-white bg-transparent px-8 py-4 text-lg font-semibold text-white transition-all duration-300 hover:bg-white hover:text-primary-600"
-            >
-              Mentor Students
-            </Button>
-          </div>
-        </div>
-      </section>
-
-      {/* Footer */}
-      <footer className="bg-gray-900 py-12 text-white">
-        <div className="mx-auto max-w-6xl px-4">
-          <div className="grid grid-cols-1 gap-8 md:grid-cols-4">
-            <div className="col-span-1 md:col-span-2">
-              <div className="mb-4 flex items-center space-x-2">
-                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-br from-primary-600 to-primary-700">
-                  <span className="font-bold text-white">SD</span>
-                </div>
-                <span className="text-xl font-bold">
-                  SDIA - San Diego Indonesian Association
-                </span>
-              </div>
-              <p className="mb-4 max-w-md text-gray-400">
-                Connecting Indonesian students and celebrating our rich culture
-                through community, tradition, and friendship.
-              </p>
-            </div>
-
-            <div>
-              <h4 className="mb-4 font-semibold">Quick Links</h4>
-              <ul className="space-y-2 text-gray-400">
-                <li>
-                  <a
-                    href="/about"
-                    className="transition-colors hover:text-secondary-400"
-                  >
-                    About Us
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="/team"
-                    className="transition-colors hover:text-secondary-400"
-                  >
-                    Team
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="/events/upcoming"
-                    className="transition-colors hover:text-secondary-400"
-                  >
-                    Events
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="/contact"
-                    className="transition-colors hover:text-secondary-400"
-                  >
-                    Contact
-                  </a>
-                </li>
-              </ul>
-            </div>
-
-            <div>
-              <h4 className="mb-4 font-semibold">Connect</h4>
-              <ul className="space-y-2 text-gray-400">
-                <li>
-                  <a
-                    href="#"
-                    className="transition-colors hover:text-secondary-400"
-                  >
-                    Instagram
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    className="transition-colors hover:text-secondary-400"
-                  >
-                    Facebook
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    className="transition-colors hover:text-secondary-400"
-                  >
-                    LinkedIn
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    className="transition-colors hover:text-secondary-400"
-                  >
-                    Email
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </div>
-
-          <div className="mt-8 border-t border-gray-800 pt-8 text-center text-gray-400">
-            <p>
-              &copy; 2025 SDIA - San Diego Indonesian Association. All rights
-              reserved.
-            </p>
-          </div>
-        </div>
-      </footer>
+      <CTA />
+      <Footer />
     </div>
   );
 }

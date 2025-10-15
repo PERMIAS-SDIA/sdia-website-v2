@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
+import Footer from "@/components/footer";
 import Image from "next/image";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -403,6 +404,8 @@ export default function TeamPage() {
           )}
         </div>
       </section>
+
+      <Footer />
     </div>
   );
 }

@@ -17,6 +17,7 @@ import {
 import { Send, Instagram, Linkedin } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import Footer from "@/components/footer";
 
 import { submitContactForm } from "./contact";
 export default function ContactPage() {
@@ -285,8 +286,7 @@ export default function ContactPage() {
         </div>
       </section>
 
-      {/* FAQ and Footer unchanged */}
-      {/* ... keep your existing FAQ and footer sections ... */}
+      <Footer />
     </div>
   );
 }
