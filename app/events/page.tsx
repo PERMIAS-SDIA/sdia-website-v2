@@ -32,13 +32,12 @@ export type Event = {
   updated: string;
 };
 
-const PB_BASE = "https://permiassdia.pockethost.io";
-const COLLECTION = "events";
-
-// Build a PocketBase file URL for a record file
-function pbFileUrl(recordId: string, filename: string) {
+// Build a file URL for event documentation
+function buildFileUrl(filename: string) {
   if (/^https?:\/\//i.test(filename)) return filename; // already a URL
-  return `${PB_BASE}/api/files/${COLLECTION}/${recordId}/${encodeURIComponent(filename)}`;
+  // For now, we'll assume images are stored in the public folder
+  // You may need to adjust this based on your actual image storage setup
+  return `/images/${filename}`;
 }
 
 function parseDateTime(iso: string) {
@@ -63,16 +62,13 @@ function parseDateTime(iso: string) {
 }
 
 async function getEvents(): Promise<Event[]> {
-  const res = await fetch(
-    `${PB_BASE}/api/collections/${COLLECTION}/records?perPage=100`,
-    {
-      cache: "no-store",
-    }
-  );
+  const res = await fetch('/api/events', {
+    cache: "no-store",
+  });
   if (!res.ok) throw new Error(`Failed to fetch events: ${res.status}`);
   const data = await res.json();
 
-  return (data.items as Event[]).map(e => {
+  return (data as Event[]).map(e => {
     const { date, time } = parseDateTime(e.datetime);
     return { ...e, date, time };
   });
@@ -123,7 +119,7 @@ function EventModal({
   onOpenGallery: (images: string[], title: string) => void;
 }) {
   const images = useMemo(
-    () => (event.documentation || []).map(f => pbFileUrl(event.id, f)),
+    () => (event.documentation || []).map(f => buildFileUrl(f)),
     [event]
   );
 
@@ -298,7 +294,7 @@ function GalleryModal({
 
 function EventCard({ event, onClick }: { event: Event; onClick: () => void }) {
   const image =
-    (event.documentation?.[0] && pbFileUrl(event.id, event.documentation[0])) ||
+    (event.documentation?.[0] && buildFileUrl(event.documentation[0])) ||
     "/placeholder.svg";
   return (
     <Card
@@ -526,7 +522,7 @@ export default function EventsPage() {
             </h2>
             <p className="mx-auto max-w-3xl text-xl text-gray-600">
               {activeTab === "upcoming"
-                ? "Click on any event to see more details"
+                ? "Check our Instagram for latest updates!"
                 : "Browse through our past events and photo galleries"}
             </p>
           </div>

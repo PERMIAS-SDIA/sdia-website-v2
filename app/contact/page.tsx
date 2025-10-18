@@ -62,19 +62,16 @@ export default function ContactPage() {
           <Card className="border-2 border-secondary-100 shadow-2xl">
             <CardContent className="p-12">
               <div className="mb-12 text-center">
-                <Badge className="mb-4 bg-secondary-100 text-secondary-800 hover:bg-secondary-200">
-                  Send us a message
-                </Badge>
                 <h2 className="mb-4 text-4xl font-bold text-gray-800">
                   Get In Touch
                 </h2>
                 <p className="text-xl text-gray-600">
-                  Fill out the form below and we will get back to you as soon as
-                  possible.
+                  Are you an Indonesian college student in San Diego? 
+                  <br />Contact us for our WhatsApp group and follow us on Instagram for event announcements!
                 </p>
               </div>
 
-              {/* 3) point the form to the server action and name the inputs the action expects */}
+              {/* 3) point the form to the server action and name the inputs the action expects
               <form action={submitContactForm} className="space-y-8">
                 <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
                   <div>
@@ -112,7 +109,6 @@ export default function ContactPage() {
                   </div>
                 </div>
 
-                {/* Fields your action actually reads */}
                 <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
                   <div>
                     <label
@@ -185,7 +181,6 @@ export default function ContactPage() {
                   </div>
                 </div>
 
-                {/* Optional category select kept for UI, not submitted to the action */}
                 <div>
                   <label
                     htmlFor="category"
@@ -232,16 +227,10 @@ export default function ContactPage() {
                   <Send className="mr-3 h-6 w-6" />
                   Send Message
                 </Button>
-              </form>
+              </form> */}
 
               {/* Contact Info Below Form */}
-              <div className="mt-16 border-t border-gray-200 pt-12">
-                <div className="mb-8 text-center">
-                  <h3 className="mb-4 text-2xl font-bold text-gray-800">
-                    Other Ways to Reach Us
-                  </h3>
-                </div>
-
+              <div className="mt-16">
                 <div className="grid grid-cols-1 gap-8 text-center md:grid-cols-2">
                   <div>
                     <h4 className="mb-2 font-semibold text-gray-800">Email</h4>

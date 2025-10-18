@@ -137,7 +137,7 @@ export default function HomePage() {
 
           <p className="mx-auto mb-8 max-w-3xl text-xl leading-relaxed text-gray-200 md:text-2xl">
             Connecting Indonesian students and celebrating our rich culture
-            through community, tradition, and friendship at UC San Diego.
+            through community, tradition, and friendship at San Diego.
           </p>
 
           {/* Social Media Icons */}
@@ -185,7 +185,7 @@ export default function HomePage() {
         </div>
 
         {/* Scroll Indicator */}
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 transform animate-bounce">
+        <div className="absolute bottom-8 left-6/13 -translate-x-1/2 transform animate-bounce">
           <ChevronDown className="h-8 w-8 text-white/80 transition-colors hover:text-white" />
         </div>
       </section>

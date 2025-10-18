@@ -14,44 +14,15 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-
-/** PocketBase config */
-const PB_URL = "https://permiassdia.pockethost.io";
-const TEAM_COLLECTION = "team";
-
-/** PocketBase record shape */
-type TeamRecord = {
-  id: string;
-  name: string;
-  graduation_year?: number | string;
-  major?: string;
-  role?: string;
-  hobbies?: string;
-  instagram?: string;
-  email?: string;
-  linkedin?: string;
-  formal_headshot?: string;
-  casual_headshot?: string;
-  bio?: string;
-};
-
-/** Build a PocketBase file URL for a single-file field */
-function pbFileUrl(recordId: string, filename?: string) {
-  if (!filename) return "";
-  if (/^https?:\/\//i.test(filename)) return filename;
-  return `${PB_URL}/api/files/${TEAM_COLLECTION}/${recordId}/${encodeURIComponent(
-    filename
-  )}`;
-}
+import { TeamRecord } from "@/lib/types";
+import { buildImageUrl } from "@/lib/utils";
 
 /** Card component */
 function TeamMemberCard({ member }: { member: TeamRecord }) {
   const [isFlipped, setIsFlipped] = useState(false);
 
-  const professionalPhoto =
-    pbFileUrl(member.id, member.formal_headshot) || "/placeholder.svg";
-  const casualPhoto =
-    pbFileUrl(member.id, member.casual_headshot) || "/placeholder.svg";
+  const professionalPhoto = buildImageUrl(member.formal_headshot);
+  const casualPhoto = buildImageUrl(member.casual_headshot);
 
   return (
     <div className="h-[32rem] w-full [perspective:1000px]">
@@ -235,14 +206,11 @@ export default function TeamPage() {
     let mounted = true;
     (async () => {
       try {
-        const res = await fetch(
-          `${PB_URL}/api/collections/${TEAM_COLLECTION}/records?perPage=200&sort=name`,
-          { cache: "no-store" }
-        );
-        if (!res.ok) throw new Error(`PB fetch failed: ${res.status}`);
+        const res = await fetch('/api/team', { cache: 'no-store' });
+        if (!res.ok) throw new Error(`API fetch failed: ${res.status}`);
         const data = await res.json();
         if (!mounted) return;
-        setMembers((data.items || []) as TeamRecord[]);
+        setMembers(data as TeamRecord[]);
       } catch (e: any) {
         if (!mounted) return;
         setErr(e?.message ?? String(e));
@@ -395,6 +363,16 @@ export default function TeamPage() {
       {/* Grid */}
       <section className="px-4 py-20">
         <div className="mx-auto max-w-7xl">
+          {loading && (
+            <div className="flex justify-center py-12">
+              <div className="text-lg text-gray-600">Loading team members...</div>
+            </div>
+          )}
+          {err && (
+            <div className="flex justify-center py-12">
+              <div className="text-lg text-red-600">Error: {err}</div>
+            </div>
+          )}
           {!loading && !err && (
             <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
               {filteredMembers.map(m => (

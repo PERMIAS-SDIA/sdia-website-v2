@@ -46,20 +46,7 @@ export default function AboutPage() {
 
           <p className="mx-auto mb-8 max-w-3xl text-xl leading-relaxed text-gray-200 md:text-2xl">
             Celebrating Indonesian culture and building lasting connections at
-            UC San Diego since 2016.
-          </p>
-        </div>
-      </section>
-
-      {/* Content Section */}
-      <section className="px-4 py-20">
-        <div className="mx-auto max-w-4xl text-center">
-          <h2 className="mb-6 text-3xl font-bold text-gray-800">
-            Welcome to the About Page
-          </h2>
-          <p className="text-lg text-gray-600">
-            This is a working About page with the SDIA color scheme. The
-            navigation should work properly now.
+            San Diego since 2016.
           </p>
         </div>
       </section>

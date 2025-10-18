@@ -13,7 +13,7 @@ export default function Footer() {
             </div>
             <p className="mb-4 max-w-md text-gray-400">
               Connecting Indonesian students and celebrating our rich culture
-              through community, tradition, and friendship at UC San Diego.
+              through community, tradition, and friendship at San Diego.
             </p>
           </div>
 
@@ -44,14 +44,14 @@ export default function Footer() {
                   Events
                 </Link>
               </li>
-              <li>
+              {/* <li>
                 <Link
                   href="/alumni"
                   className="transition-colors hover:text-secondary-400"
                 >
                   Alumni
                 </Link>
-              </li>
+              </li> */}
               <li>
                 <Link
                   href="/contact"
