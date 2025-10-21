@@ -1,4 +1,4 @@
-// Database types for our application
+// Database types
 export interface TeamRecord {
   id: string;
   name: string;
@@ -40,10 +40,12 @@ export interface EventRecord {
   long_description?: string;
   datetime?: string;
   location?: string;
-  category?: string;
+  category?: "Cultural" | "Social" | "Academic" | "Community" | string;
   isPast?: boolean;
   instagram?: string;
   documentation?: string[];
   created?: string;
   updated?: string;
+  date?: string;
+  time?: string;
 }

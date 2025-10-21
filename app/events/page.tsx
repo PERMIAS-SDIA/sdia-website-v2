@@ -14,23 +14,7 @@ import {
   ChevronLeft,
   ChevronRight,
 } from "lucide-react";
-
-export type Event = {
-  time: any;
-  date: any;
-  id: string;
-  title: string;
-  description: string;
-  long_description?: string;
-  documentation?: string[]; // PB files
-  datetime: string; // ISO string from PB
-  instagram?: string;
-  location?: string;
-  category?: "Cultural" | "Social" | "Academic" | "Community" | string;
-  isPast?: boolean;
-  created: string;
-  updated: string;
-};
+import { EventRecord } from "@/lib/types";
 
 // Build a file URL for event documentation
 function buildFileUrl(filename: string) {
@@ -61,15 +45,15 @@ function parseDateTime(iso: string) {
   return { date, time };
 }
 
-async function getEvents(): Promise<Event[]> {
+async function getEvents(): Promise<EventRecord[]> {
   const res = await fetch('/api/events', {
     cache: "no-store",
   });
   if (!res.ok) throw new Error(`Failed to fetch events: ${res.status}`);
   const data = await res.json();
 
-  return (data as Event[]).map(e => {
-    const { date, time } = parseDateTime(e.datetime);
+  return (data as EventRecord[]).map(e => {
+    const { date, time } = parseDateTime(e.datetime || "");
     return { ...e, date, time };
   });
 }
@@ -88,9 +72,9 @@ function prettyCategory(cat?: string) {
   return cat.charAt(0).toUpperCase() + cat.slice(1);
 }
 
-function isPastEvent(e: Event) {
+function isPastEvent(e: EventRecord) {
   if (typeof e.isPast === "boolean") return e.isPast;
-  if (!e.date) return false;
+  if (!e.datetime) return false;
   // Compare date only (ignore time zones)
   const today = new Date();
   const endOfToday = new Date(
@@ -101,7 +85,7 @@ function isPastEvent(e: Event) {
     59,
     59
   );
-  return new Date(e.date) < endOfToday;
+  return new Date(e.datetime) < endOfToday;
 }
 
 /* -------------------- Modals -------------------- */
@@ -112,7 +96,7 @@ function EventModal({
   onClose,
   onOpenGallery,
 }: {
-  event: Event;
+  event: EventRecord;
   isOpen: boolean;
   onClose: () => void;
   // eslint-disable-next-line no-unused-vars
@@ -170,7 +154,7 @@ function EventModal({
               </div>
             )}
 
-            <div className="prose max-w-none text-gray-700">
+            <div className="prose max-w-none text-gray-700 whitespace-pre-line">
               {event.description && <p className="mb-2">{event.description}</p>}
               {event.long_description && <p>{event.long_description}</p>}
             </div>
@@ -292,7 +276,7 @@ function GalleryModal({
 
 /* -------------------- Card -------------------- */
 
-function EventCard({ event, onClick }: { event: Event; onClick: () => void }) {
+function EventCard({ event, onClick }: { event: EventRecord; onClick: () => void }) {
   const image =
     (event.documentation?.[0] && buildFileUrl(event.documentation[0])) ||
     "/placeholder.svg";
@@ -326,7 +310,7 @@ function EventCard({ event, onClick }: { event: Event; onClick: () => void }) {
               <Calendar className="mr-2 h-4 w-4 text-primary-600" />
               {event.date}
             </div>
-            {event.time && (
+            {event.datetime && (
               <div className="flex items-center">
                 <Clock className="mr-2 h-4 w-4 text-primary-600" />
                 {event.time}
@@ -361,11 +345,11 @@ function EventCard({ event, onClick }: { event: Event; onClick: () => void }) {
 /* -------------------- Main Page -------------------- */
 
 export default function EventsPage() {
-  const [events, setEvents] = useState<Event[]>([]);
+  const [events, setEvents] = useState<EventRecord[]>([]);
   const [loading, setLoading] = useState(true);
   const [err, setErr] = useState<string | null>(null);
 
-  const [selectedEvent, setSelectedEvent] = useState<Event | null>(null); // keep this as requested
+  const [selectedEvent, setSelectedEvent] = useState<EventRecord | null>(null); // keep this as requested
   const [selectedCategory, setSelectedCategory] = useState<string>("all");
   const [activeTab, setActiveTab] = useState<"upcoming" | "past">("upcoming");
 

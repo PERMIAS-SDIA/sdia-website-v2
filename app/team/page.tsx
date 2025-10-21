@@ -129,60 +129,6 @@ function TeamMemberCard({ member }: { member: TeamRecord }) {
                         </div>
                       </div>
                     )}
-
-                    {/* Socials column: icons only */}
-                    <div className="shrink-0">
-                      <p className="mb-2 text-xs font-semibold text-gray-800">
-                        Socials
-                      </p>
-                      <div className="flex items-center gap-3">
-                        {member.instagram && (
-                          <a
-                            href={
-                              member.instagram.startsWith("http")
-                                ? member.instagram
-                                : `https://instagram.com/${member.instagram.replace(
-                                    /^@/,
-                                    ""
-                                  )}`
-                            }
-                            target="_blank"
-                            rel="noreferrer"
-                            aria-label="Instagram"
-                            className="rounded-md p-1 hover:bg-white/40"
-                          >
-                            <Instagram className="h-5 w-5 text-primary-600" />
-                          </a>
-                        )}
-                        {member.email && (
-                          <a
-                            href={`mailto:${member.email}`}
-                            aria-label="Email"
-                            className="rounded-md p-1 hover:bg-white/40"
-                          >
-                            <Mail className="h-5 w-5 text-primary-600" />
-                          </a>
-                        )}
-                        {member.linkedin && (
-                          <a
-                            href={
-                              member.linkedin.startsWith("http")
-                                ? member.linkedin
-                                : `https://www.linkedin.com/in/${member.linkedin.replace(
-                                    /^@/,
-                                    ""
-                                  )}`
-                            }
-                            target="_blank"
-                            rel="noreferrer"
-                            aria-label="LinkedIn"
-                            className="rounded-md p-1 hover:bg-white/40"
-                          >
-                            <Linkedin className="h-5 w-5 text-primary-600" />
-                          </a>
-                        )}
-                      </div>
-                    </div>
                   </div>
                 )}
               </div>
