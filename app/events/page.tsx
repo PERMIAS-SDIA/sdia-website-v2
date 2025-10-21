@@ -26,7 +26,10 @@ function buildFileUrl(filename: string) {
 
 function parseDateTime(iso: string) {
   if (!iso) return { date: "", time: "" };
-  const d = new Date(iso);
+  
+  // If the string doesn't have timezone info, treat it as local time
+  const dateStr = iso.includes('T') ? iso : iso.replace(' ', 'T');
+  const d = new Date(dateStr + (iso.includes('+') || iso.includes('Z') ? '' : ''));
 
   // Localized strings
   const date = d.toLocaleDateString("en-US", {
@@ -73,7 +76,6 @@ function prettyCategory(cat?: string) {
 }
 
 function isPastEvent(e: EventRecord) {
-  if (typeof e.isPast === "boolean") return e.isPast;
   if (!e.datetime) return false;
   // Compare date only (ignore time zones)
   const today = new Date();
