@@ -14,8 +14,9 @@ This website is deployed on Vercel using permias sdia's gmail account.
 
 Back-end is hosted on Neon also on the sdia gmail account. 
 The Back-end is only used to host a database of alumni, officers, and events. Currently you can add, remove, edit entries from the Neon console "Tables" menu. In the future, an admin page would be ideal.
-Images are hosted on Vercel blob. If it ever runs out of space, we would probably need to look into options:
-- Paid: Amazon S3, upgrade
+Images are hosted on Vercel blob. For future maintainers, if it ever runs out of space, here are some ideas:
+- Paid: Amazon S3, upgrade Vercel plan
+- Free: Google Drive and then reference imgs to drive link, remove images for alumni, old events, old officers
 
 Domain name is from namecheap.com:
 - Username  : permiassandiego
