@@ -154,201 +154,206 @@ function AlumniCard({ member }: { member: AlumniRecord }) {
 }
 
 export default function AlumniPage() {
-  const [searchTerm, setSearchTerm] = useState("");
-  const [selectedYear, setSelectedYear] = useState("all");
-  const [selectedIndustry, setSelectedIndustry] = useState("all");
-
-  const filteredAlumni = alumniMembers.filter(member => {
-    const searchLower = searchTerm.toLowerCase();
-    const matchesSearch =
-      member.name.toLowerCase().includes(searchLower) ||
-      member.company.toLowerCase().includes(searchLower) ||
-      member.currentPosition.toLowerCase().includes(searchLower) ||
-      member.major.toLowerCase().includes(searchLower) ||
-      member.location.toLowerCase().includes(searchLower) ||
-      member.bio.toLowerCase().includes(searchLower);
-
-    const matchesYear =
-      selectedYear === "all" || member.graduationYear === selectedYear;
-
-    const matchesIndustry =
-      selectedIndustry === "all" ||
-      member.company.toLowerCase().includes(selectedIndustry.toLowerCase()) ||
-      member.currentPosition
-        .toLowerCase()
-        .includes(selectedIndustry.toLowerCase());
-
-    return matchesSearch && matchesYear && matchesIndustry;
-  });
-
   return (
-    <div className="min-h-screen bg-gradient-to-b from-neutral-50 to-white">
-      {/* Hero Section */}
-      <section className="relative flex min-h-[60vh] items-center justify-center overflow-hidden pt-20">
-        <div className="absolute inset-0 z-0">
-          <Image
-            src="/alumni.JPG?height=800&width=1920&text=Alumni+Network"
-            alt="Alumni Network"
-            fill
-            className="object-cover"
-            priority
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-primary-900/80 via-primary-800/60 to-primary-700/40"></div>
-        </div>
-
-        <div className="relative z-10 mx-auto max-w-4xl px-4 text-center">
-          <Badge className="mb-6 bg-secondary-400 px-4 py-2 text-sm font-medium text-secondary-900 hover:bg-secondary-500">
-            Our Success Stories
-          </Badge>
-
-          <h1 className="mb-6 text-5xl font-bold leading-tight text-white md:text-6xl">
-            Alumni
-            <span className="block bg-gradient-to-r from-secondary-300 to-secondary-500 bg-clip-text text-transparent">
-              Network
-            </span>
-          </h1>
-
-          <p className="mx-auto mb-8 max-w-3xl text-xl leading-relaxed text-gray-200 md:text-2xl">
-            Discover where our graduates are making their mark around the world.
-          </p>
-        </div>
-      </section>
-
-      {/* Search and Filter Section */}
-      <section className="border-b bg-white px-4 py-12">
-        <div className="mx-auto max-w-6xl">
-          <div className="flex flex-col items-center justify-between gap-4 md:flex-row">
-            <div className="relative max-w-md flex-1">
-              <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 transform text-gray-400" />
-              <Input
-                placeholder="Search by name, company, position, major, location..."
-                value={searchTerm}
-                onChange={e => setSearchTerm(e.target.value)}
-                className="pl-10"
-              />
-            </div>
-
-            <div className="flex gap-4">
-              <Select value={selectedYear} onValueChange={setSelectedYear}>
-                <SelectTrigger className="w-40">
-                  <SelectValue placeholder="Graduation Year" />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="all">All Years</SelectItem>
-                  <SelectItem value="2021">2021</SelectItem>
-                  <SelectItem value="2020">2020</SelectItem>
-                  <SelectItem value="2019">2019</SelectItem>
-                  <SelectItem value="2018">2018</SelectItem>
-                  <SelectItem value="2017">2017</SelectItem>
-                  <SelectItem value="2016">2016</SelectItem>
-                </SelectContent>
-              </Select>
-
-              <Select
-                value={selectedIndustry}
-                onValueChange={setSelectedIndustry}
-              >
-                <SelectTrigger className="w-40">
-                  <SelectValue placeholder="Industry" />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="all">All Industries</SelectItem>
-                  <SelectItem value="tech">Technology</SelectItem>
-                  <SelectItem value="finance">Finance</SelectItem>
-                  <SelectItem value="health">Healthcare</SelectItem>
-                  <SelectItem value="engineering">Engineering</SelectItem>
-                  <SelectItem value="research">Research</SelectItem>
-                </SelectContent>
-              </Select>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Alumni Grid */}
-      <section className="px-4 py-20">
-        <div className="mx-auto max-w-7xl">
-          <div className="mb-16 text-center">
-            <Badge className="mb-4 bg-primary-100 text-primary-800 hover:bg-primary-200">
-              500+ Strong Network
-            </Badge>
-            <h2 className="mb-4 text-4xl font-bold text-gray-800 md:text-5xl">
-              Where Are They Now?
-            </h2>
-            <p className="mx-auto max-w-3xl text-xl text-gray-600">
-              Our alumni are making impact across industries and around the
-              globe
-            </p>
-          </div>
-
-          {filteredAlumni.length > 0 ? (
-            <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-              {filteredAlumni.map(member => (
-                <AlumniCard key={member.id} member={member} />
-              ))}
-            </div>
-          ) : (
-            <div className="py-12 text-center">
-              <GraduationCap className="mx-auto mb-4 h-16 w-16 text-gray-400" />
-              <h3 className="mb-2 text-xl font-semibold text-gray-600">
-                No alumni found
-              </h3>
-              <p className="text-gray-500">
-                Try adjusting your search criteria
-              </p>
-            </div>
-          )}
-        </div>
-      </section>
-
-      {/* Stats Section */}
-      <section className="bg-gradient-to-r from-primary-50 via-white to-secondary-50 py-20">
-        <div className="mx-auto max-w-6xl px-4">
-          <div className="mb-16 text-center">
-            <h2 className="mb-4 text-4xl font-bold text-gray-800 md:text-5xl">
-              Alumni Impact
-            </h2>
-            <p className="mx-auto max-w-3xl text-xl text-gray-600">
-              Our graduates are making a difference worldwide
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 gap-8 md:grid-cols-4">
-            {[
-              {
-                icon: GraduationCap,
-                number: "500+",
-                label: "Alumni Worldwide",
-              },
-              {
-                icon: Building,
-                number: "200+",
-                label: "Companies Represented",
-              },
-              { icon: MapPin, number: "50+", label: "Countries & States" },
-              { icon: Linkedin, number: "95%", label: "Employment Rate" },
-            ].map((stat, index) => (
-              <Card
-                key={index}
-                className="p-6 text-center transition-all duration-300 hover:shadow-lg"
-              >
-                <CardContent className="p-0">
-                  <div className="mb-4 inline-flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-br from-primary-500 to-primary-600">
-                    <stat.icon className="h-8 w-8 text-white" />
-                  </div>
-                  <div className="mb-2 text-3xl font-bold text-primary-600">
-                    {stat.number}
-                  </div>
-                  <div className="font-medium text-gray-600">{stat.label}</div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <CTA />
-      <Footer />
+    <div>
+      <h1>Page Under Construction</h1>
     </div>
   );
+  // const [searchTerm, setSearchTerm] = useState("");
+  // const [selectedYear, setSelectedYear] = useState("all");
+  // const [selectedIndustry, setSelectedIndustry] = useState("all");
+
+  // const filteredAlumni = alumniMembers.filter(member => {
+  //   const searchLower = searchTerm.toLowerCase();
+  //   const matchesSearch =
+  //     member.name.toLowerCase().includes(searchLower) ||
+  //     member.company.toLowerCase().includes(searchLower) ||
+  //     member.currentPosition.toLowerCase().includes(searchLower) ||
+  //     member.major.toLowerCase().includes(searchLower) ||
+  //     member.location.toLowerCase().includes(searchLower) ||
+  //     member.bio.toLowerCase().includes(searchLower);
+
+  //   const matchesYear =
+  //     selectedYear === "all" || member.graduationYear === selectedYear;
+
+  //   const matchesIndustry =
+  //     selectedIndustry === "all" ||
+  //     member.company.toLowerCase().includes(selectedIndustry.toLowerCase()) ||
+  //     member.currentPosition
+  //       .toLowerCase()
+  //       .includes(selectedIndustry.toLowerCase());
+
+  //   return matchesSearch && matchesYear && matchesIndustry;
+  // });
+
+  // return (
+  //   <div className="min-h-screen bg-gradient-to-b from-neutral-50 to-white">
+  //     {/* Hero Section */}
+  //     <section className="relative flex min-h-[60vh] items-center justify-center overflow-hidden pt-20">
+  //       <div className="absolute inset-0 z-0">
+  //         <Image
+  //           src="/alumni.JPG?height=800&width=1920&text=Alumni+Network"
+  //           alt="Alumni Network"
+  //           fill
+  //           className="object-cover"
+  //           priority
+  //         />
+  //         <div className="absolute inset-0 bg-gradient-to-r from-primary-900/80 via-primary-800/60 to-primary-700/40"></div>
+  //       </div>
+
+  //       <div className="relative z-10 mx-auto max-w-4xl px-4 text-center">
+  //         <Badge className="mb-6 bg-secondary-400 px-4 py-2 text-sm font-medium text-secondary-900 hover:bg-secondary-500">
+  //           Our Success Stories
+  //         </Badge>
+
+  //         <h1 className="mb-6 text-5xl font-bold leading-tight text-white md:text-6xl">
+  //           Alumni
+  //           <span className="block bg-gradient-to-r from-secondary-300 to-secondary-500 bg-clip-text text-transparent">
+  //             Network
+  //           </span>
+  //         </h1>
+
+  //         <p className="mx-auto mb-8 max-w-3xl text-xl leading-relaxed text-gray-200 md:text-2xl">
+  //           Discover where our graduates are making their mark around the world.
+  //         </p>
+  //       </div>
+  //     </section>
+
+  //     {/* Search and Filter Section */}
+  //     <section className="border-b bg-white px-4 py-12">
+  //       <div className="mx-auto max-w-6xl">
+  //         <div className="flex flex-col items-center justify-between gap-4 md:flex-row">
+  //           <div className="relative max-w-md flex-1">
+  //             <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 transform text-gray-400" />
+  //             <Input
+  //               placeholder="Search by name, company, position, major, location..."
+  //               value={searchTerm}
+  //               onChange={e => setSearchTerm(e.target.value)}
+  //               className="pl-10"
+  //             />
+  //           </div>
+
+  //           <div className="flex gap-4">
+  //             <Select value={selectedYear} onValueChange={setSelectedYear}>
+  //               <SelectTrigger className="w-40">
+  //                 <SelectValue placeholder="Graduation Year" />
+  //               </SelectTrigger>
+  //               <SelectContent>
+  //                 <SelectItem value="all">All Years</SelectItem>
+  //                 <SelectItem value="2021">2021</SelectItem>
+  //                 <SelectItem value="2020">2020</SelectItem>
+  //                 <SelectItem value="2019">2019</SelectItem>
+  //                 <SelectItem value="2018">2018</SelectItem>
+  //                 <SelectItem value="2017">2017</SelectItem>
+  //                 <SelectItem value="2016">2016</SelectItem>
+  //               </SelectContent>
+  //             </Select>
+
+  //             <Select
+  //               value={selectedIndustry}
+  //               onValueChange={setSelectedIndustry}
+  //             >
+  //               <SelectTrigger className="w-40">
+  //                 <SelectValue placeholder="Industry" />
+  //               </SelectTrigger>
+  //               <SelectContent>
+  //                 <SelectItem value="all">All Industries</SelectItem>
+  //                 <SelectItem value="tech">Technology</SelectItem>
+  //                 <SelectItem value="finance">Finance</SelectItem>
+  //                 <SelectItem value="health">Healthcare</SelectItem>
+  //                 <SelectItem value="engineering">Engineering</SelectItem>
+  //                 <SelectItem value="research">Research</SelectItem>
+  //               </SelectContent>
+  //             </Select>
+  //           </div>
+  //         </div>
+  //       </div>
+  //     </section>
+
+  //     {/* Alumni Grid */}
+  //     <section className="px-4 py-20">
+  //       <div className="mx-auto max-w-7xl">
+  //         <div className="mb-16 text-center">
+  //           <Badge className="mb-4 bg-primary-100 text-primary-800 hover:bg-primary-200">
+  //             500+ Strong Network
+  //           </Badge>
+  //           <h2 className="mb-4 text-4xl font-bold text-gray-800 md:text-5xl">
+  //             Where Are They Now?
+  //           </h2>
+  //           <p className="mx-auto max-w-3xl text-xl text-gray-600">
+  //             Our alumni are making impact across industries and around the
+  //             globe
+  //           </p>
+  //         </div>
+
+  //         {filteredAlumni.length > 0 ? (
+  //           <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+  //             {filteredAlumni.map(member => (
+  //               <AlumniCard key={member.id} member={member} />
+  //             ))}
+  //           </div>
+  //         ) : (
+  //           <div className="py-12 text-center">
+  //             <GraduationCap className="mx-auto mb-4 h-16 w-16 text-gray-400" />
+  //             <h3 className="mb-2 text-xl font-semibold text-gray-600">
+  //               No alumni found
+  //             </h3>
+  //             <p className="text-gray-500">
+  //               Try adjusting your search criteria
+  //             </p>
+  //           </div>
+  //         )}
+  //       </div>
+  //     </section>
+
+  //     {/* Stats Section */}
+  //     <section className="bg-gradient-to-r from-primary-50 via-white to-secondary-50 py-20">
+  //       <div className="mx-auto max-w-6xl px-4">
+  //         <div className="mb-16 text-center">
+  //           <h2 className="mb-4 text-4xl font-bold text-gray-800 md:text-5xl">
+  //             Alumni Impact
+  //           </h2>
+  //           <p className="mx-auto max-w-3xl text-xl text-gray-600">
+  //             Our graduates are making a difference worldwide
+  //           </p>
+  //         </div>
+
+  //         <div className="grid grid-cols-1 gap-8 md:grid-cols-4">
+  //           {[
+  //             {
+  //               icon: GraduationCap,
+  //               number: "500+",
+  //               label: "Alumni Worldwide",
+  //             },
+  //             {
+  //               icon: Building,
+  //               number: "200+",
+  //               label: "Companies Represented",
+  //             },
+  //             { icon: MapPin, number: "50+", label: "Countries & States" },
+  //             { icon: Linkedin, number: "95%", label: "Employment Rate" },
+  //           ].map((stat, index) => (
+  //             <Card
+  //               key={index}
+  //               className="p-6 text-center transition-all duration-300 hover:shadow-lg"
+  //             >
+  //               <CardContent className="p-0">
+  //                 <div className="mb-4 inline-flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-br from-primary-500 to-primary-600">
+  //                   <stat.icon className="h-8 w-8 text-white" />
+  //                 </div>
+  //                 <div className="mb-2 text-3xl font-bold text-primary-600">
+  //                   {stat.number}
+  //                 </div>
+  //                 <div className="font-medium text-gray-600">{stat.label}</div>
+  //               </CardContent>
+  //             </Card>
+  //           ))}
+  //         </div>
+  //       </div>
+  //     </section>
+
+  //     <CTA />
+  //     <Footer />
+  //   </div>
+  // );
 }
