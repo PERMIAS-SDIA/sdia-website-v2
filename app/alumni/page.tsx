@@ -23,160 +23,28 @@ import Image from "next/image";
 import { useState } from "react";
 import Footer from "@/components/footer";
 import CTA from "@/components/cta";
+import { AlumniRecord } from "@/lib/types";
 
-interface AlumniMember {
-  id: number;
-  name: string;
-  graduationYear: string;
-  major: string;
-  currentPosition: string;
-  company: string;
-  location: string;
-  professionalPhoto: string;
-  casualPhoto: string;
-  bio: string;
-  achievements: string[];
-  email: string;
-  linkedin?: string;
-  advice: string;
-}
+const alumniMembers: AlumniRecord[] = [
+  {
+    id: "string",
+    name: "string",
+    graduation_year: 2025,
+    major: "string",
+    role: "string",
+    career: "string",
+    fun_fact: "string",
+    instagram: "string",
+    email: "string",
+    linkedin: "string",
+    formal_headshot: "string",
+    casual_headshot: "string",
+    created: "string",
+    updated: "string",
+  }
+]
 
-const alumniMembers: AlumniMember[] = [
-  {
-    id: 1,
-    name: "Dr. Sari Kusuma",
-    graduationYear: "2018",
-    major: "Bioengineering",
-    currentPosition: "Senior Research Scientist",
-    company: "Genentech",
-    location: "San Francisco, CA",
-    professionalPhoto:
-      "/placeholder.svg?height=300&width=300&text=Sari+Professional",
-    casualPhoto: "/placeholder.svg?height=300&width=300&text=Sari+Casual",
-    bio: "Leading breakthrough research in cancer therapeutics and mentoring the next generation of scientists.",
-    achievements: [
-      "Published 15+ research papers",
-      "Patent holder",
-      "TEDx Speaker",
-    ],
-    email: "sari.kusuma@genentech.com",
-    linkedin: "sari-kusuma-phd",
-    advice:
-      "Never be afraid to ask questions and always stay curious. Your Indonesian heritage is a strength, not a limitation.",
-  },
-  {
-    id: 2,
-    name: "Michael Tanoto",
-    graduationYear: "2019",
-    major: "Computer Science",
-    currentPosition: "Senior Software Engineer",
-    company: "Google",
-    location: "Mountain View, CA",
-    professionalPhoto:
-      "/placeholder.svg?height=300&width=300&text=Michael+Professional",
-    casualPhoto: "/placeholder.svg?height=300&width=300&text=Michael+Casual",
-    bio: "Building scalable systems that impact billions of users while advocating for diversity in tech.",
-    achievements: [
-      "Led team of 12 engineers",
-      "Google Excellence Award",
-      "Open source contributor",
-    ],
-    email: "michael.tanoto@google.com",
-    linkedin: "michael-tanoto",
-    advice:
-      "Build projects you're passionate about. The technical skills will follow, but passion is what drives innovation.",
-  },
-  {
-    id: 3,
-    name: "Priya Sari",
-    graduationYear: "2020",
-    major: "International Business",
-    currentPosition: "Investment Banking Associate",
-    company: "Goldman Sachs",
-    location: "New York, NY",
-    professionalPhoto:
-      "/placeholder.svg?height=300&width=300&text=Priya+Professional",
-    casualPhoto: "/placeholder.svg?height=300&width=300&text=Priya+Casual",
-    bio: "Specializing in cross-border M&A transactions and building bridges between US and Southeast Asian markets.",
-    achievements: [
-      "Closed $2B+ in deals",
-      "40 Under 40 Finance",
-      "Mentor at UCSD",
-    ],
-    email: "priya.sari@gs.com",
-    linkedin: "priya-sari-cfa",
-    advice:
-      "Network authentically and always be willing to help others. Success is sweeter when shared with your community.",
-  },
-  {
-    id: 4,
-    name: "David Wijaya",
-    graduationYear: "2017",
-    major: "Mechanical Engineering",
-    currentPosition: "Principal Engineer",
-    company: "SpaceX",
-    location: "Hawthorne, CA",
-    professionalPhoto:
-      "/placeholder.svg?height=300&width=300&text=David+Professional",
-    casualPhoto: "/placeholder.svg?height=300&width=300&text=David+Casual",
-    bio: "Designing propulsion systems for Mars missions and pushing the boundaries of space exploration.",
-    achievements: [
-      "Led Falcon Heavy development",
-      "NASA collaboration",
-      "Engineering excellence award",
-    ],
-    email: "david.wijaya@spacex.com",
-    linkedin: "david-wijaya-pe",
-    advice:
-      "Dream big and work hard. The impossible becomes possible when you combine Indonesian determination with world-class education.",
-  },
-  {
-    id: 5,
-    name: "Lisa Hartono",
-    graduationYear: "2021",
-    major: "Public Health",
-    currentPosition: "Program Manager",
-    company: "WHO",
-    location: "Geneva, Switzerland",
-    professionalPhoto:
-      "/placeholder.svg?height=300&width=300&text=Lisa+Professional",
-    casualPhoto: "/placeholder.svg?height=300&width=300&text=Lisa+Casual",
-    bio: "Leading global health initiatives and working to improve healthcare access in developing nations.",
-    achievements: [
-      "Managed $50M+ programs",
-      "Published health policy research",
-      "UN Young Leader",
-    ],
-    email: "lisa.hartono@who.int",
-    linkedin: "lisa-hartono-mph",
-    advice:
-      "Use your privilege and education to lift others up. The world needs more Indonesian voices in global leadership.",
-  },
-  {
-    id: 6,
-    name: "Ryan Santoso",
-    graduationYear: "2016",
-    major: "Economics",
-    currentPosition: "Founder & CEO",
-    company: "TechStart Indonesia",
-    location: "Jakarta, Indonesia",
-    professionalPhoto:
-      "/placeholder.svg?height=300&width=300&text=Ryan+Professional",
-    casualPhoto: "/placeholder.svg?height=300&width=300&text=Ryan+Casual",
-    bio: "Building Indonesia's next unicorn startup and creating opportunities for young Indonesian entrepreneurs.",
-    achievements: [
-      "Raised $25M Series A",
-      "Forbes 30 Under 30",
-      "Y Combinator alum",
-    ],
-    email: "ryan@techstart.id",
-    linkedin: "ryan-santoso-ceo",
-    advice:
-      "Don't forget your roots. The best opportunities often lie in solving problems back home with global perspectives.",
-  },
-];
-
-function AlumniCard({ member }: { member: AlumniMember }) {
+function AlumniCard({ member }: { member: AlumniRecord }) {
   const [isFlipped, setIsFlipped] = useState(false);
 
   return (

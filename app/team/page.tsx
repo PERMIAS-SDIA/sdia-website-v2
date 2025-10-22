@@ -21,8 +21,8 @@ import { buildImageUrl } from "@/lib/utils";
 function TeamMemberCard({ member }: { member: TeamRecord }) {
   const [isFlipped, setIsFlipped] = useState(false);
 
-  const professionalPhoto = buildImageUrl(member.formal_headshot);
-  const casualPhoto = buildImageUrl(member.casual_headshot);
+  const pic = member.pic;
+  const second_pic = member.second_pic;
 
   return (
     <div className="h-[32rem] w-full [perspective:1000px]">
@@ -37,7 +37,7 @@ function TeamMemberCard({ member }: { member: TeamRecord }) {
           <CardContent className="flex h-full flex-col p-0">
             <div className="relative h-80 overflow-hidden rounded-t-lg">
               <Image
-                src={professionalPhoto}
+                src={pic}
                 alt={member.name}
                 fill
                 className="object-cover object-center"
@@ -79,7 +79,7 @@ function TeamMemberCard({ member }: { member: TeamRecord }) {
           <CardContent className="flex h-full flex-col p-0">
             <div className="relative h-64 overflow-hidden rounded-t-lg">
               <Image
-                src={casualPhoto}
+                src={second_pic}
                 alt={`${member.name} casual`}
                 fill
                 className="object-cover object-center"
@@ -92,45 +92,12 @@ function TeamMemberCard({ member }: { member: TeamRecord }) {
                   {member.name}
                 </h3>
 
-                {member.bio && (
+                {member.description && (
                   <p className="mb-4 text-sm leading-relaxed text-gray-700">
-                    {member.bio}
+                    {member.description}
                   </p>
                 )}
-
-                {/* Interests + Socials in one row */}
-                {(member.hobbies ||
-                  member.instagram ||
-                  member.email ||
-                  member.linkedin) && (
-                  <div className="mt-2 flex items-start gap-4">
-                    {/* Interests column: max 70% width, horizontal scroll with nice thin scrollbar */}
-                    {member.hobbies && (
-                      <div className="max-w-[70%] flex-1 basis-0">
-                        <p className="mb-2 text-xs font-semibold text-gray-800">
-                          Interests
-                        </p>
-                        <div className="overflow-x-auto scrollbar-thin scrollbar-track-transparent scrollbar-thumb-primary-300/70 scrollbar-thumb-rounded-full hover:scrollbar-thumb-primary-400">
-                          <div className="inline-flex w-max gap-2 whitespace-nowrap pr-1">
-                            {member.hobbies
-                              .split(",")
-                              .map(h => h.trim())
-                              .filter(Boolean)
-                              .map((h, i) => (
-                                <Badge
-                                  key={`${member.id}-hob-${i}`}
-                                  variant="secondary"
-                                  className="inline-flex px-3 py-1 text-xs"
-                                >
-                                  {h}
-                                </Badge>
-                              ))}
-                          </div>
-                        </div>
-                      </div>
-                    )}
-                  </div>
-                )}
+                
               </div>
             </div>
           </CardContent>
@@ -187,7 +154,7 @@ export default function TeamPage() {
         m.name?.toLowerCase().includes(q) ||
         (m.role || "").toLowerCase().includes(q) ||
         (m.major || "").toLowerCase().includes(q) ||
-        (m.hobbies || "").toLowerCase().includes(q);
+        (m.description || "").toLowerCase().includes(q);
 
       const matchesYear =
         selectedYear === "all" ||

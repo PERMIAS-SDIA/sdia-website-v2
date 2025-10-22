@@ -27,9 +27,9 @@ function buildFileUrl(filename: string) {
 function parseDateTime(iso: string) {
   if (!iso) return { date: "", time: "" };
   
-  // If the string doesn't have timezone info, treat it as local time
+  // Always treat as local time - convert space to T for ISO format if needed
   const dateStr = iso.includes('T') ? iso : iso.replace(' ', 'T');
-  const d = new Date(dateStr + (iso.includes('+') || iso.includes('Z') ? '' : ''));
+  const d = new Date(dateStr);
 
   // Localized strings
   const date = d.toLocaleDateString("en-US", {
