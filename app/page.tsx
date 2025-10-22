@@ -113,9 +113,7 @@ export default function HomePage() {
 
         {/* Hero Content */}
         <div className="relative z-10 mx-auto max-w-5xl px-4 text-center">
-          <Badge className="mb-6 bg-secondary-400 px-4 py-2 text-sm font-medium text-secondary-900 hover:bg-secondary-500">
-            Welcome to Our Community
-          </Badge>
+
 
           {/* Logo Placeholder */}
           <div className="mx-auto mb-6 h-32 w-32 overflow-hidden rounded-full shadow-2xl">
@@ -185,7 +183,7 @@ export default function HomePage() {
         </div>
 
         {/* Scroll Indicator */}
-        <div className="absolute bottom-8 left-6/13 -translate-x-1/2 transform animate-bounce">
+        <div className="absolute bottom-4 left-6/13 -translate-x-1/2 transform animate-bounce">
           <ChevronDown className="h-8 w-8 text-white/80 transition-colors hover:text-white" />
         </div>
       </section>
@@ -239,11 +237,11 @@ export default function HomePage() {
             <div className="relative">
               <div className="overflow-hidden rounded-2xl shadow-2xl">
                 <Image
-                  src="/mission.JPG"
+                  src="/sdiagirls2024.JPEG"
                   alt="SDIA Group Photo"
                   width={600}
                   height={400}
-                  className="h-[400px] w-full object-cover"
+                  className="h-[400px] w-full object-cover object-[center_65%]"
                 />
               </div>
               <div className="absolute -bottom-6 -right-6 h-32 w-32 rounded-full bg-gradient-to-br from-secondary-400 to-secondary-500 opacity-20"></div>
