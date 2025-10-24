@@ -110,7 +110,6 @@ function TeamMemberCard({ member }: { member: TeamRecord }) {
 export default function TeamPage() {
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedYear, setSelectedYear] = useState("all");
-  const [selectedPosition, setSelectedPosition] = useState("all");
   const [members, setMembers] = useState<TeamRecord[]>([]);
   const [loading, setLoading] = useState(true);
   const [err, setErr] = useState<string | null>(null);
@@ -160,11 +159,7 @@ export default function TeamPage() {
         selectedYear === "all" ||
         String(m.graduation_year || "") === selectedYear;
 
-      const matchesPosition =
-        selectedPosition === "all" ||
-        (m.role || "").toLowerCase().includes(selectedPosition.toLowerCase());
-
-      return matchesSearch && matchesYear && matchesPosition;
+      return matchesSearch && matchesYear;
     });
 
     // Custom ordering: president first, then vice president, then rest
@@ -181,7 +176,7 @@ export default function TeamPage() {
     });
 
     return result;
-  }, [members, searchTerm, selectedYear, selectedPosition]);
+  }, [members, searchTerm, selectedYear]);
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-neutral-50 to-white">
@@ -226,49 +221,19 @@ export default function TeamPage() {
               />
             </div>
 
-            <div className="flex gap-4">
-              <Select value={selectedYear} onValueChange={setSelectedYear}>
-                <SelectTrigger className="w-40">
-                  <SelectValue placeholder="Graduation Year" />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="all">All Years</SelectItem>
-                  {years.map(y => (
-                    <SelectItem key={y} value={y}>
-                      {y}
-                    </SelectItem>
-                  ))}
-                </SelectContent>
-              </Select>
-
-              <Select
-                value={selectedPosition}
-                onValueChange={setSelectedPosition}
-              >
-                <SelectTrigger className="w-48">
-                  <SelectValue placeholder="Role" />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="all">All Roles</SelectItem>
-                  <SelectItem value="president">President</SelectItem>
-                  <SelectItem value="vice">Vice President</SelectItem>
-                  <SelectItem value="secretary">Secretary</SelectItem>
-                  <SelectItem value="treasurer">Treasurer</SelectItem>
-                  <SelectItem value="coordinator">Coordinator</SelectItem>
-                  <SelectItem value="director">Director</SelectItem>
-                  <SelectItem value="finance">Finance</SelectItem>
-                  <SelectItem value="fundraising">Fundraising</SelectItem>
-                  <SelectItem value="marketing">Marketing</SelectItem>
-                  <SelectItem value="public relations">
-                    Public Relations
+            <Select value={selectedYear} onValueChange={setSelectedYear}>
+              <SelectTrigger className="w-50">
+                <SelectValue placeholder="Graduation Year" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="all">All Graduating Years</SelectItem>
+                {years.map(y => (
+                  <SelectItem key={y} value={y}>
+                    {y}
                   </SelectItem>
-                  <SelectItem value="documentation">Documentation</SelectItem>
-                  <SelectItem value="event">Event</SelectItem>
-                  <SelectItem value="logistics">Logistics</SelectItem>
-                  <SelectItem value="designer">Designer</SelectItem>
-                </SelectContent>
-              </Select>
-            </div>
+                ))}
+              </SelectContent>
+            </Select>
           </div>
         </div>
       </section>

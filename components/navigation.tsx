@@ -76,8 +76,7 @@ export function Navigation() {
             About
           </a>
 
-          {/* People Dropdown TODO: CHANGE TO TRUE WHEN PEOPLE PAGES ARE READY*/}
-          {false && (
+          {/* People Dropdown TODO: PUT IN ALUMNI PAGE WHEN READY*/}
           <div
             className="relative"
             onMouseEnter={() => handleDropdownEnter("people")}
@@ -104,16 +103,15 @@ export function Navigation() {
                 >
                   Team
                 </a>
-                <a
+                {/* <a
                   href="/alumni"
                   className="block px-4 py-2 text-sm text-gray-600 hover:bg-gray-100"
                 >
                   Alumni
-                </a>
+                </a> */}
               </div>
             )}
           </div>
-        )}
 
           {/* Events Dropdown */}
           <a
