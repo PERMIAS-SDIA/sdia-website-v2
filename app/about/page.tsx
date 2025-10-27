@@ -23,7 +23,7 @@ export default function AboutPage() {
       <section className="relative flex min-h-[70vh] items-center justify-center overflow-hidden pt-20">
         <div className="absolute inset-0 z-0">
           <Image
-            src="/welcgroup.jpeg?height=800&width=1920&text=About+Us"
+            src="/groupwelc2025.JPEG?height=800&width=1920&text=About+Us"
             alt="About Us"
             fill
             className="object-cover"
@@ -46,7 +46,7 @@ export default function AboutPage() {
 
           <p className="mx-auto mb-8 max-w-3xl text-xl leading-relaxed text-gray-200 md:text-2xl">
             Celebrating Indonesian culture and building lasting connections at
-            San Diego since 2016.
+            San Diego since 2019.
           </p>
         </div>
       </section>
@@ -74,38 +74,38 @@ export default function AboutPage() {
             <div className="space-y-12">
               {[
                 {
-                  year: "2016",
+                  year: "2019",
                   title: "Foundation",
                   description:
-                    "UCSD Indonesian Club was founded by a group of passionate Indonesian students who wanted to create a home away from home.",
+                    "The UCSD Indonesian Club was founded by a group of 10 passionate Indonesian students who wanted to create a home away from home.",
                   side: "left",
                 },
                 {
-                  year: "2018",
-                  title: "First Cultural Night",
+                  year: "2020",
+                  title: "Covid Era",
                   description:
-                    "Organized our first major cultural showcase, featuring traditional dances, music, and Indonesian cuisine.",
+                    "SDIA had to transition to virtual meetings during the pandemic, which led them to start the Zoom New Student Info meetings.",
                   side: "right",
                 },
                 {
-                  year: "2020",
-                  title: "Virtual Adaptation",
+                  year: "2021",
+                  title: "Masks On",
                   description:
-                    "Successfully transitioned to virtual events during the pandemic, maintaining community connections online.",
+                    "With only 10 officers, they transitioned from virtual to in-person events, hosting Welcoming Party 2021 and Smores at the Shores!",
                   side: "left",
                 },
                 {
                   year: "2022",
-                  title: "Alumni Network",
+                  title: "Start of SDIA Cup",
                   description:
-                    "Launched our formal alumni network, connecting current students with successful graduates.",
+                    "Present day PORMICA began here! This year was the start of SDIA Cup, which hosted Badminton, Soccer, and Basketball for Indonesian students.",
                   side: "right",
                 },
                 {
-                  year: "2024",
-                  title: "150+ Members",
+                  year: "2023",
+                  title: "Start of Selera SDIA",
                   description:
-                    "Reached our milestone of 150+ active members, making us one of the largest cultural clubs at UCSD.",
+                    "Realizing that students often felt homesick and craved Indonesian food, SDIA decided to bring it right to them with Selera SDIA!",
                   side: "left",
                 },
               ].map((item, index) => (
@@ -179,24 +179,6 @@ export default function AboutPage() {
                 description:
                   "Welcoming students from all backgrounds who appreciate Indonesian culture and values.",
               },
-              {
-                icon: BookOpen,
-                title: "Education",
-                description:
-                  "Promoting cultural awareness and understanding through educational events and activities.",
-              },
-              {
-                icon: Award,
-                title: "Excellence",
-                description:
-                  "Striving for excellence in all our endeavors while supporting academic success.",
-              },
-              {
-                icon: Calendar,
-                title: "Tradition",
-                description:
-                  "Honoring Indonesian traditions while adapting to modern student life at UCSD.",
-              },
             ].map((value, index) => (
               <Card
                 key={index}
@@ -230,7 +212,7 @@ export default function AboutPage() {
               What We Do
             </h2>
             <p className="mx-auto max-w-3xl text-xl text-gray-600">
-              From cultural celebrations to academic support, we offer diverse
+              From cultural celebrations to academic support, we offer valuable
               opportunities for growth and connection
             </p>
           </div>
@@ -239,25 +221,16 @@ export default function AboutPage() {
             <div>
               <div className="space-y-8">
                 {[
-                  {
-                    title: "Cultural Events",
-                    description:
-                      "Annual cultural nights, traditional dance performances, and Indonesian food festivals that showcase our rich heritage.",
-                  },
+                  
                   {
                     title: "Social Gatherings",
                     description:
                       "Regular meetups, game nights, and social events that help members build lasting friendships and connections.",
                   },
                   {
-                    title: "Academic Support",
+                    title: "Career Networking",
                     description:
                       "Study groups, mentorship programs, and academic workshops to help members succeed in their studies.",
-                  },
-                  {
-                    title: "Community Service",
-                    description:
-                      "Volunteer opportunities and community outreach programs that give back to the San Diego community.",
                   },
                 ].map((activity, index) => (
                   <div key={index} className="flex items-start space-x-4">
@@ -279,7 +252,7 @@ export default function AboutPage() {
 
             <div className="relative">
               <Image
-                src="/whatwedo.JPG?height=600&width=500"
+                src="/groupgrad2024.JPEG?height=600&width=500"
                 alt="Indonesian Club Activities"
                 width={500}
                 height={600}  
