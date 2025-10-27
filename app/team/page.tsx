@@ -21,8 +21,8 @@ import { buildImageUrl } from "@/lib/utils";
 function TeamMemberCard({ member }: { member: TeamRecord }) {
   const [isFlipped, setIsFlipped] = useState(false);
 
-  const professionalPhoto = buildImageUrl(member.formal_headshot);
-  const casualPhoto = buildImageUrl(member.casual_headshot);
+  const pic = member.pic;
+  const second_pic = member.second_pic;
 
   return (
     <div className="h-[32rem] w-full [perspective:1000px]">
@@ -37,7 +37,7 @@ function TeamMemberCard({ member }: { member: TeamRecord }) {
           <CardContent className="flex h-full flex-col p-0">
             <div className="relative h-80 overflow-hidden rounded-t-lg">
               <Image
-                src={professionalPhoto}
+                src={pic}
                 alt={member.name}
                 fill
                 className="object-cover object-center"
@@ -79,7 +79,7 @@ function TeamMemberCard({ member }: { member: TeamRecord }) {
           <CardContent className="flex h-full flex-col p-0">
             <div className="relative h-64 overflow-hidden rounded-t-lg">
               <Image
-                src={casualPhoto}
+                src={second_pic}
                 alt={`${member.name} casual`}
                 fill
                 className="object-cover object-center"
@@ -92,45 +92,12 @@ function TeamMemberCard({ member }: { member: TeamRecord }) {
                   {member.name}
                 </h3>
 
-                {member.bio && (
+                {member.description && (
                   <p className="mb-4 text-sm leading-relaxed text-gray-700">
-                    {member.bio}
+                    {member.description}
                   </p>
                 )}
-
-                {/* Interests + Socials in one row */}
-                {(member.hobbies ||
-                  member.instagram ||
-                  member.email ||
-                  member.linkedin) && (
-                  <div className="mt-2 flex items-start gap-4">
-                    {/* Interests column: max 70% width, horizontal scroll with nice thin scrollbar */}
-                    {member.hobbies && (
-                      <div className="max-w-[70%] flex-1 basis-0">
-                        <p className="mb-2 text-xs font-semibold text-gray-800">
-                          Interests
-                        </p>
-                        <div className="overflow-x-auto scrollbar-thin scrollbar-track-transparent scrollbar-thumb-primary-300/70 scrollbar-thumb-rounded-full hover:scrollbar-thumb-primary-400">
-                          <div className="inline-flex w-max gap-2 whitespace-nowrap pr-1">
-                            {member.hobbies
-                              .split(",")
-                              .map(h => h.trim())
-                              .filter(Boolean)
-                              .map((h, i) => (
-                                <Badge
-                                  key={`${member.id}-hob-${i}`}
-                                  variant="secondary"
-                                  className="inline-flex px-3 py-1 text-xs"
-                                >
-                                  {h}
-                                </Badge>
-                              ))}
-                          </div>
-                        </div>
-                      </div>
-                    )}
-                  </div>
-                )}
+                
               </div>
             </div>
           </CardContent>
@@ -143,7 +110,6 @@ function TeamMemberCard({ member }: { member: TeamRecord }) {
 export default function TeamPage() {
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedYear, setSelectedYear] = useState("all");
-  const [selectedPosition, setSelectedPosition] = useState("all");
   const [members, setMembers] = useState<TeamRecord[]>([]);
   const [loading, setLoading] = useState(true);
   const [err, setErr] = useState<string | null>(null);
@@ -187,17 +153,13 @@ export default function TeamPage() {
         m.name?.toLowerCase().includes(q) ||
         (m.role || "").toLowerCase().includes(q) ||
         (m.major || "").toLowerCase().includes(q) ||
-        (m.hobbies || "").toLowerCase().includes(q);
+        (m.description || "").toLowerCase().includes(q);
 
       const matchesYear =
         selectedYear === "all" ||
         String(m.graduation_year || "") === selectedYear;
 
-      const matchesPosition =
-        selectedPosition === "all" ||
-        (m.role || "").toLowerCase().includes(selectedPosition.toLowerCase());
-
-      return matchesSearch && matchesYear && matchesPosition;
+      return matchesSearch && matchesYear;
     });
 
     // Custom ordering: president first, then vice president, then rest
@@ -214,7 +176,7 @@ export default function TeamPage() {
     });
 
     return result;
-  }, [members, searchTerm, selectedYear, selectedPosition]);
+  }, [members, searchTerm, selectedYear]);
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-neutral-50 to-white">
@@ -259,49 +221,19 @@ export default function TeamPage() {
               />
             </div>
 
-            <div className="flex gap-4">
-              <Select value={selectedYear} onValueChange={setSelectedYear}>
-                <SelectTrigger className="w-40">
-                  <SelectValue placeholder="Graduation Year" />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="all">All Years</SelectItem>
-                  {years.map(y => (
-                    <SelectItem key={y} value={y}>
-                      {y}
-                    </SelectItem>
-                  ))}
-                </SelectContent>
-              </Select>
-
-              <Select
-                value={selectedPosition}
-                onValueChange={setSelectedPosition}
-              >
-                <SelectTrigger className="w-48">
-                  <SelectValue placeholder="Role" />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="all">All Roles</SelectItem>
-                  <SelectItem value="president">President</SelectItem>
-                  <SelectItem value="vice">Vice President</SelectItem>
-                  <SelectItem value="secretary">Secretary</SelectItem>
-                  <SelectItem value="treasurer">Treasurer</SelectItem>
-                  <SelectItem value="coordinator">Coordinator</SelectItem>
-                  <SelectItem value="director">Director</SelectItem>
-                  <SelectItem value="finance">Finance</SelectItem>
-                  <SelectItem value="fundraising">Fundraising</SelectItem>
-                  <SelectItem value="marketing">Marketing</SelectItem>
-                  <SelectItem value="public relations">
-                    Public Relations
+            <Select value={selectedYear} onValueChange={setSelectedYear}>
+              <SelectTrigger className="w-50">
+                <SelectValue placeholder="Graduation Year" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="all">All Graduating Years</SelectItem>
+                {years.map(y => (
+                  <SelectItem key={y} value={y}>
+                    {y}
                   </SelectItem>
-                  <SelectItem value="documentation">Documentation</SelectItem>
-                  <SelectItem value="event">Event</SelectItem>
-                  <SelectItem value="logistics">Logistics</SelectItem>
-                  <SelectItem value="designer">Designer</SelectItem>
-                </SelectContent>
-              </Select>
-            </div>
+                ))}
+              </SelectContent>
+            </Select>
           </div>
         </div>
       </section>

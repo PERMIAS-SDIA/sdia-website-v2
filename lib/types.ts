@@ -1,19 +1,13 @@
 // Database types
 export interface TeamRecord {
-  id: string;
+  id: number;
   name: string;
-  graduation_year?: number;
-  major?: string;
-  role?: string;
-  hobbies?: string;
-  instagram?: string;
-  email?: string;
-  linkedin?: string;
-  formal_headshot?: string;
-  casual_headshot?: string;
-  bio?: string;
-  created?: string;
-  updated?: string;
+  graduation_year: number;
+  major: string;
+  role: string;
+  pic: string;
+  second_pic: string;
+  description: string;
 }
 
 export interface AlumniRecord {
