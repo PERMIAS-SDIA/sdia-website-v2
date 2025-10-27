@@ -395,7 +395,7 @@ export default function EventsPage() {
       <section className="relative flex min-h-[60vh] items-center justify-center overflow-hidden pt-20">
         <div className="absolute inset-0 z-0">
           <Image
-            src="/events.JPG?height=800&width=1920&text=SDIA+Events"
+            src="/asmaralokacrowd.JPEG?height=800&width=1920&text=SDIA+Events"
             alt="SDIA Events"
             fill
             className="object-cover"
@@ -418,7 +418,7 @@ export default function EventsPage() {
 
           <p className="mx-auto mb-8 max-w-3xl text-xl leading-relaxed text-gray-200 md:text-2xl">
             Join us for exciting cultural celebrations, educational workshops,
-            and community activities.
+            and social events.
           </p>
         </div>
       </section>
@@ -474,11 +474,6 @@ export default function EventsPage() {
                 key: "academic",
                 label: "Academic",
                 color: "bg-blue-100 text-blue-800 hover:bg-blue-200",
-              },
-              {
-                key: "community",
-                label: "Community",
-                color: "bg-green-100 text-green-800 hover:bg-green-200",
               },
             ].map(category => (
               <button
