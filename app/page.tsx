@@ -266,7 +266,7 @@ export default function HomePage() {
               </h3>
               <p className="text-lg leading-relaxed text-gray-700">
                 At SDIA, we envision a future of students proud of their cultural 
-                heritage and background. As we build a sense of community and belonging 
+                background. As we build a sense of community and belonging 
                 among ourselves, we hope to inspire Indonesian students to appreciate the 
                 deep cultural ties that connect us all, even as we live oceans away from home!
               </p>

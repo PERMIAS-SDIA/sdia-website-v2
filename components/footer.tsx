@@ -12,8 +12,7 @@ export default function Footer() {
               </span>
             </div>
             <p className="mb-4 max-w-md text-gray-400">
-              Connecting Indonesian students and celebrating our rich culture
-              through community, tradition, and friendship at San Diego.
+              Connecting Indonesian students and anyone interested in Indonesian culture at San Diego.
             </p>
           </div>
 
