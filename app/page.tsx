@@ -134,8 +134,7 @@ export default function HomePage() {
           </h1>
 
           <p className="mx-auto mb-8 max-w-3xl text-xl leading-relaxed text-gray-200 md:text-2xl">
-            Connecting Indonesian students and celebrating our rich culture
-            through community, tradition, and friendship at San Diego.
+            Connecting Indonesian students and anyone interested in Indonesian culture at San Diego.
           </p>
 
           {/* Social Media Icons */}
