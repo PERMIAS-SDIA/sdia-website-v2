@@ -114,7 +114,6 @@ export default function HomePage() {
         {/* Hero Content */}
         <div className="relative z-10 mx-auto max-w-5xl px-4 text-center">
 
-
           {/* Logo Placeholder */}
           <div className="mx-auto mb-6 h-32 w-32 overflow-hidden rounded-full shadow-2xl">
             <Image
@@ -210,16 +209,14 @@ export default function HomePage() {
                 Our Mission
               </h3>
               <p className="text-lg leading-relaxed text-gray-700">
-                To create a vibrant community that celebrates Indonesian
-                culture, supports academic excellence, and fosters lifelong
-                connections among Indonesian students at UCSD. We strive to be a
-                home away from home while promoting cultural awareness and
-                diversity on campus.
+                Our mission at Permias SDIA is to foster a rich community that 
+                celebrates Indonesian culture, promoting academic success and most 
+                of all, cultural connection across all students at UCSD.
               </p>
               <p className="text-lg leading-relaxed text-gray-700">
-                We bring Indonesian students together through cultural events,
-                academic support, and social activities that strengthen our
-                bonds and preserve our heritage.
+                If any of these values speak to you, come join our organization through
+                fun social events, academic events and even an end-of-the-year banquet 
+                to celebrate our seniors!
               </p>
               <div className="flex items-center space-x-4 pt-4">
                 <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-gradient-to-br from-primary-600 to-primary-700">
@@ -268,14 +265,10 @@ export default function HomePage() {
                 Our Vision
               </h3>
               <p className="text-lg leading-relaxed text-gray-700">
-                To be the premier Indonesian student organization that bridges
-                cultures, empowers future leaders, and creates lasting impact
-                both within UCSD and the broader San Diego community.
-              </p>
-              <p className="text-lg leading-relaxed text-gray-700">
-                We envision a future where Indonesian heritage thrives and
-                inspires others, fostering understanding and appreciation for
-                our rich cultural diversity.
+                At SDIA, we envision a future of students proud of their cultural 
+                heritage and background. As we build a sense of community and belonging 
+                among ourselves, we hope to inspire Indonesian students to appreciate the 
+                deep cultural ties that connect us all, even as we live oceans away from home!
               </p>
               <div className="flex items-center space-x-4 pt-4">
                 <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-gradient-to-br from-secondary-400 to-secondary-500">
@@ -312,37 +305,12 @@ export default function HomePage() {
           <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
             <StatCard
               icon={Users}
-              value={150}
+              value={140}
               label="Active Members"
               suffix="+"
             />
-            <StatCard icon={Calendar} value={25} label="Events This Year" />
-            <StatCard icon={Award} value={8} label="Years Strong" />
-          </div>
-
-          {/* Additional Stats Row */}
-          <div className="mx-auto mt-8 grid max-w-4xl grid-cols-1 gap-8 md:grid-cols-2">
-            <Card className="border-secondary-200 bg-gradient-to-br from-secondary-50 to-secondary-100 p-6 text-center transition-all duration-300 hover:shadow-lg">
-              <CardContent className="p-0">
-                <Heart className="mx-auto mb-4 h-12 w-12 text-primary-600" />
-                <div className="mb-2 text-2xl font-bold text-primary-600">
-                  500+
-                </div>
-                <div className="font-medium text-gray-600">Alumni Network</div>
-              </CardContent>
-            </Card>
-
-            <Card className="border-primary-200 bg-gradient-to-br from-primary-50 to-primary-100 p-6 text-center transition-all duration-300 hover:shadow-lg">
-              <CardContent className="p-0">
-                <Award className="mx-auto mb-4 h-12 w-12 text-secondary-600" />
-                <div className="mb-2 text-2xl font-bold text-secondary-600">
-                  12
-                </div>
-                <div className="font-medium text-gray-600">
-                  Cultural Showcases
-                </div>
-              </CardContent>
-            </Card>
+            <StatCard icon={Calendar} value={9} suffix="+" label="Events Each Year" />
+            <StatCard icon={Award} value={6} label="Years Strong" />
           </div>
         </div>
       </section>
