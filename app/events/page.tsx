@@ -19,30 +19,46 @@ import { EventRecord } from "@/lib/types";
 // Build a file URL for event documentation
 function buildFileUrl(filename: string) {
   if (/^https?:\/\//i.test(filename)) return filename; // already a URL
-  // For now, we'll assume images are stored in the public folder
-  // You may need to adjust this based on your actual image storage setup
   return `/images/${filename}`;
 }
 
 function parseDateTime(iso: string) {
   if (!iso) return { date: "", time: "" };
 
-  const d = new Date(iso);
+  // Parse the ISO-like string without applying timezone conversion.
+  // We intentionally ignore trailing 'Z' or offsets and treat the components as local time.
+  const match = iso
+    .trim()
+    .match(/^(\d{4})-(\d{2})-(\d{2})[T\s](\d{2}):(\d{2})(?::(\d{2}))?/);
 
-  // Localized strings in San Diego time (America/Los_Angeles)
-  const date = d.toLocaleDateString("en-US", {
-    weekday: "short", // e.g. Sun
-    month: "short", // e.g. Sep
-    day: "numeric", // e.g. 7
-    year: "numeric", // e.g. 2025
-    timeZone: "America/Los_Angeles",
+  if (!match) {
+    // Fallback: best-effort display without conversion
+    const safe = iso.replace(/Z$/i, "").replace("T", " ");
+    const [datePart, timePart] = safe.split(" ");
+    return { date: datePart || safe, time: timePart || "" };
+  }
+
+  const [, y, m, d, hh, mm, ss] = match;
+  const localDate = new Date(
+    Number(y),
+    Number(m) - 1,
+    Number(d),
+    Number(hh),
+    Number(mm),
+    ss ? Number(ss) : 0
+  );
+
+  const date = localDate.toLocaleDateString("en-US", {
+    weekday: "short",
+    month: "short",
+    day: "numeric",
+    year: "numeric",
   });
 
-  const time = d.toLocaleTimeString("en-US", {
+  const time = localDate.toLocaleTimeString("en-US", {
     hour: "numeric",
     minute: "2-digit",
     hour12: true,
-    timeZone: "America/Los_Angeles",
   });
   return { date, time };
 }
