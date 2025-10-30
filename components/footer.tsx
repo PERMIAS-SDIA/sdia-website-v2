@@ -100,7 +100,7 @@ export default function Footer() {
 
         <div className="mt-8 border-t border-gray-800 pt-8 text-center text-gray-400">
           <p>
-            &copy; 2025 SDIA - San Diego Indonesian Association. All rights
+            &copy; 2025 PERMIAS SDIA. All rights
             reserved.
           </p>
         </div>

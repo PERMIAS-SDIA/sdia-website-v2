@@ -541,7 +541,7 @@ export default function EventsPage() {
             </div>
           ) : !loading && !err ? (
             <div className="py-12 text-center text-gray-500">
-              No events found.
+              Check our Instagram for latest updates!
             </div>
           ) : null}
         </div>

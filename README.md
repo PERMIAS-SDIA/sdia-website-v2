@@ -10,7 +10,7 @@ This is the GitHub repo for the PERMIAS SDIA website. Below is some documentatio
 Always do `pnpm run dev` before pushing your changes to ensure everything works correctly.
 
 # Hosting
-This website is deployed on Vercel using permias sdia's gmail account.
+This website is deployed on Vercel using PERMIAS SDIA's gmail account.
 
 Back-end is hosted on Neon also on the sdia gmail account. 
 - The Back-end is only used to host a database of alumni, officers, and events. 
