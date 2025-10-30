@@ -8,7 +8,7 @@ export default function Footer() {
           <div className="col-span-1 md:col-span-2">
             <div className="mb-4 flex items-center space-x-2">
               <span className="text-xl font-bold">
-                SDIA - San Diego Indonesian Association
+                PERMIAS SDIA - Persatuan Mahasiswa Indonesia di Amerika Serikat, San Diego Indonesian Association
               </span>
             </div>
             <p className="mb-4 max-w-md text-gray-400">

@@ -74,7 +74,7 @@ export default function AboutPage() {
             <div className="space-y-12">
               {[
                 {
-                  year: "before 2015",
+                  year: "Before 2015",
                   title: "Origins",
                   description:
                     "Back then, the Indonesian Student Association at San Diego was named SADIS.",
@@ -84,21 +84,21 @@ export default function AboutPage() {
                   year: "2015",
                   title: "Foundation",
                   description:
-                    "SDIA was formed by a group of 10 passionate Indonesian students who wanted to create a home away from home. Also the date of our first Instagram post!",
+                    "PERMIAS SDIA was formed by a group of 10 passionate Indonesian students who wanted to create a home away from home. Also the date of our first Instagram post!",
                   side: "left",
                 },
                 {
                   year: "2016",
                   title: "First Party",
                   description:
-                    "SDIA hosted its first party during Halloween.",
+                    "PERMIAS SDIA hosted its first party during Halloween.",
                   side: "right",
                 },
                 {
                   year: "2020", 
-                  title: "Covid Era",
+                  title: "COVID-19 Era",
                   description:
-                    "SDIA had to transition to virtual meetings during the pandemic, which led them to start the Zoom New Student Info meetings.",
+                    "PERMIAS SDIA had to transition to virtual meetings during the pandemic, which led them to start the Zoom New Student Info meetings.",
                   side: "left",
                 },
                 {
@@ -119,7 +119,7 @@ export default function AboutPage() {
                   year: "2023",
                   title: "Start of Selera SDIA",
                   description:
-                    "Realizing that students often felt homesick and craved Indonesian food, SDIA decided to bring it right to them with Selera SDIA!",
+                    "Realizing that students often felt homesick and craved Indonesian food, PERMIAS SDIA decided to bring it right to them with Selera SDIA!",
                   side: "right",
                 },
               ].map((item, index) => (

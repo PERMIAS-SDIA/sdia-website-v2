@@ -209,7 +209,7 @@ export default function HomePage() {
                 Our Mission
               </h3>
               <p className="text-lg leading-relaxed text-gray-700">
-                Our mission at Permias SDIA is to foster a rich community that 
+                Our mission at PERMIAS SDIA is to foster a rich community that 
                 celebrates Indonesian culture, promoting academic success and most 
                 of all, cultural connection across all students at UCSD.
               </p>
@@ -265,7 +265,7 @@ export default function HomePage() {
                 Our Vision
               </h3>
               <p className="text-lg leading-relaxed text-gray-700">
-                At SDIA, we envision a future of students proud of their cultural 
+                At PERMIAS SDIA, we envision a future of students proud of their cultural 
                 background. As we build a sense of community and belonging 
                 among ourselves, we hope to inspire Indonesian students to appreciate the 
                 deep cultural ties that connect us all, even as we live oceans away from home!

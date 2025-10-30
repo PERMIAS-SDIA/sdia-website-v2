@@ -26,31 +26,24 @@ function buildFileUrl(filename: string) {
 
 function parseDateTime(iso: string) {
   if (!iso) return { date: "", time: "" };
-  
-  // Ensure the datetime string has proper format for consistent parsing
-  const dateStr = iso.includes('T') ? iso : iso.replace(' ', 'T');
-  
-  // If the string doesn't have timezone info, append 'Z' to treat as UTC
-  const utcDateStr = dateStr.includes('Z') || dateStr.includes('+') || dateStr.includes('-') 
-    ? dateStr 
-    : dateStr + 'Z';
-  
-  const d = new Date(utcDateStr);
 
-  // Localized strings
+  const d = new Date(iso);
+
+  // Localized strings in San Diego time (America/Los_Angeles)
   const date = d.toLocaleDateString("en-US", {
     weekday: "short", // e.g. Sun
     month: "short", // e.g. Sep
     day: "numeric", // e.g. 7
     year: "numeric", // e.g. 2025
+    timeZone: "America/Los_Angeles",
   });
 
   const time = d.toLocaleTimeString("en-US", {
     hour: "numeric",
     minute: "2-digit",
     hour12: true,
+    timeZone: "America/Los_Angeles",
   });
-
   return { date, time };
 }
 
@@ -402,7 +395,7 @@ export default function EventsPage() {
         <div className="absolute inset-0 z-0">
           <Image
             src="/asmaralokacrowd.JPEG?height=800&width=1920&text=SDIA+Events"
-            alt="SDIA Events"
+            alt="PERMIAS SDIA Events"
             fill
             className="object-cover"
             priority
@@ -412,7 +405,7 @@ export default function EventsPage() {
 
         <div className="relative z-10 mx-auto max-w-4xl px-4 text-center">
           <Badge className="mb-6 bg-secondary-400 px-4 py-2 text-sm font-medium text-secondary-900 hover:bg-secondary-500">
-            SDIA Events
+            PERMIAS SDIA Events
           </Badge>
 
           <h1 className="mb-6 text-5xl font-bold leading-tight text-white md:text-6xl">
