@@ -34,6 +34,10 @@ export default function WikiPage() {
         </ul>
       </ExpandableSection>
 
+      <ExpandableSection title="Where can I get groceries?">
+        There's a <b>Ralphs</b> and <b>Trader Joe's</b> 15 min bus ride from UCSD. If you have a car, <b>Costco</b> tends to be cheaper and has way more stuff. Get a Costco membership!
+      </ExpandableSection>
+
       <ExpandableSection title="I'm bored. What can I do around here?">
           <ul className="space-y-2">
 
@@ -83,7 +87,7 @@ export default function WikiPage() {
                 <li><b>Tell us if there's more!</b></li>
               </ul>
 
-              <li className="text-lg font-bold">Mecixan🌮</li>
+              <li className="text-lg font-bold">Mexican🌮</li>
               San Diego is famous for its Mexican food. You won't find anything like this back in Indonesia.
               <ul className="list-disc list-inside gap-4">
                   <li><b>Tacos El Gordo</b> - Probably the most famous taco place in San Diego.</li>
