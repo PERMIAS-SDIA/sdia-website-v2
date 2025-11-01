@@ -124,7 +124,16 @@ export function Navigation() {
           >
             Events
           </a>
-
+          <a
+            href="/wiki"
+            className={`rounded-full px-5 py-1.5 text-sm font-medium transition-colors ${
+              isActivePage("/wiki")
+                ? "bg-primary-600 text-white"
+                : "text-gray-600 hover:bg-primary-50 hover:text-primary-600"
+            }`}
+          >
+            Wiki
+          </a>
           <a
             href="/contact"
             className={`rounded-full px-5 py-1.5 text-sm font-medium transition-colors ${
