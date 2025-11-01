@@ -13,11 +13,24 @@ export default function WikiPage() {
           </p>
         </div>
       </section>
+      
+      <ExpandableSection title="What does PERMIAS SDIA stand for?">
+        PERMIAS SDIA stands for Persatuan Mahasiswa Indonesia Seluruh Amerika Serikat. SDIA stands for San Diego Indonesian Association.
+        So PERMIAS SDIA is PERMIAS's branch in San Diego.
+      </ExpandableSection>
+
+      <ExpandableSection title="Is there a WhatsApp group?">
+        Yes! You'll have to contact us either by email or Instagram if you want an invite.
+      </ExpandableSection>
 
       <ExpandableSection title="Recommended Apartments">
+        All these apartments are quite popular with Indonesian students and are below a 20 minute bus ride to UCSD. They tend to cost $1600/month/person on average. Cheaper options would probably require a car to get to school.
+        Could be cheaper if you contact someone to take over their lease or get a referral!
         <ul className="list-disc list-inside space-y-2">
-          <li><strong>Costa Verde Apartment</strong> - 12 min bus ride to UCSD and 5 min walk to UTC. Around $3400/month total for a 2 bedroom</li>
-          <li><strong>La Regencia</strong> – </li>
+          <li><strong>Costa Verde</strong> - 10 min walk to UTC. Around $3400/month total for a 2 bedroom</li>
+          <li><strong>La Regencia</strong> – 5 min walk to a grocery store nearby.</li>
+          <li><strong>The Jewel at Lux</strong> – On the higher end but you get what you pay for. $4500/month for a 2 bedroom. Right across the bus stop and UTC. Amazing view, great gyms, and quite new.</li>
+          <li><strong>Regents La Jolla</strong> – Literally right across UCSD grad housing. Also near a bus stop.</li>
         </ul>
       </ExpandableSection>
 
@@ -61,6 +74,15 @@ export default function WikiPage() {
 
       <ExpandableSection title="Food Spots">
           <ul className="space-y-2">
+
+              <li className="text-lg font-bold">Indonesian🍛</li>
+              Unfortunately not many Indonesian food spots in SD. But there is:
+              <ul className="list-disc list-inside gap-4">
+                <li><b>SELERA SDIA!</b> - PERMIAS SDIA sells Indonesian food every 2 weeks! Keep an eye out on our Instagram.</li>
+                <li><b>Lezat Indonesian Kitchen</b> - The only Indonesian restaurant around San Diego last we checked.</li>
+                <li><b>Tell us if there's more!</b></li>
+              </ul>
+
               <li className="text-lg font-bold">Mecixan🌮</li>
               San Diego is famous for its Mexican food. You won't find anything like this back in Indonesia.
               <ul className="list-disc list-inside gap-4">
@@ -76,8 +98,9 @@ export default function WikiPage() {
 
               <li className="text-lg font-bold">Chinese🥡</li>
               <ul className="list-disc list-inside gap-4">
-                <li><b>Spicy City</b> - Despite its name, the have good non-spicy food as well.</li>
+                <li><b>Spicy City</b> - Despite its name, they have good non-spicy food as well.</li>
                 <li><b>Xinjiang</b> - Various skewers.</li>
+                <li><b>YinTang Hotpot</b> - Choose your own ingredients type of hotpot place.</li>
               </ul>
 
               <li className="text-lg font-bold">Indian🍛</li>
@@ -92,11 +115,22 @@ export default function WikiPage() {
                   <li><b>The Firespot</b> - (Probably) the best all you can eat Korean BBQ in SD.</li>
               </ul>
 
+              <li className="text-lg font-bold">Japanese🍜</li>
+              <ul className="list-disc list-inside gap-4">
+                  <li><b>Ramen Nagi</b> - Right inside UTC. Always busy.</li>
+                  <li><b>Tajima Ramen Convoy</b></li>
+              </ul>
+
               <li className="text-lg font-bold">Drinks🧋</li>
               <ul className="list-disc list-inside gap-4">
                 <li><b>Matcha Maiko</b> - Top recommended Matcha spot in SD.</li>
+                <li><b>Yun Tea House</b> - Boba and milk tea.</li>
               </ul>
           </ul>
+      </ExpandableSection>
+
+      <ExpandableSection title="Can I join if I'm not Indonesian?">
+        Yes! Anyone from any background is welcome to join our community, as long as you have an interest in Indonesia. Be sure to check out our upcoming events for the most up-to-date information! 
       </ExpandableSection>
 
       <Footer />
