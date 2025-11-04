@@ -172,7 +172,16 @@ export default function HomePage() {
               >
                 See Upcoming Events
                 <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
-                
+              </Button>
+            </a>
+
+            <a href="/wiki">
+              <Button
+                size="lg"
+                className="group rounded-full bg-primary-100 px-8 py-4 text-lg font-semibold text-black shadow-lg transition-all duration-300 hover:bg-primary-150 hover:shadow-xl"
+              >
+                New student? Check out the wiki!
+                <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
               </Button>
             </a>
           </div>
