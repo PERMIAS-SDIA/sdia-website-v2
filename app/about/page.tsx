@@ -23,7 +23,7 @@ export default function AboutPage() {
       <section className="relative flex min-h-[70vh] items-center justify-center overflow-hidden pt-20">
         <div className="absolute inset-0 z-0">
           <Image
-            src="/groupwelc2025.JPEG?height=800&width=1920&text=About+Us"
+            src="/events.JPG?height=800&width=1920&text=About+Us"
             alt="About Us"
             fill
             className="object-cover"
