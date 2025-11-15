@@ -50,7 +50,7 @@ export function Navigation() {
           <div className="flex h-7 w-7 overflow-hidden rounded-full bg-gradient-to-br from-primary-600 to-primary-700">
             <Image
               src="/logo.jpeg" // make sure logo.jpeg is in /public
-              alt="SDIA Logo"
+              alt="PERMIAS SDIA Logo"
               width={28}
               height={28}
               className="h-full w-full object-cover"
@@ -58,9 +58,9 @@ export function Navigation() {
           </div>
 
           <span className="hidden px-8 pl-[0] font-semibold text-gray-800 sm:block">
-            SDIA{" "}
+            PERMIAS SDIA{" "}
           </span>
-          <span className="font-semibold text-gray-800 sm:hidden">SDIA</span>
+          <span className="font-semibold text-gray-800 sm:hidden">PERMIAS SDIA</span>
         </Link>
 
         {/* Desktop Navigation */}
@@ -124,7 +124,16 @@ export function Navigation() {
           >
             Events
           </a>
-
+          <a
+            href="/wiki"
+            className={`rounded-full px-5 py-1.5 text-sm font-medium transition-colors ${
+              isActivePage("/wiki")
+                ? "bg-primary-600 text-white"
+                : "text-gray-600 hover:bg-primary-50 hover:text-primary-600"
+            }`}
+          >
+            Wiki
+          </a>
           <a
             href="/contact"
             className={`rounded-full px-5 py-1.5 text-sm font-medium transition-colors ${

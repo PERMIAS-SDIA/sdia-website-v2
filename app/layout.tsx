@@ -8,7 +8,7 @@ import { GeistMono } from "geist/font/mono";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Permias SDIA",
+  title: "PERMIAS SDIA",
   description: "Website for PERMIAS SDIA - Connecting Indonesian college students in San Diego)",
   icons: {
     icon: "/favicon.ico",

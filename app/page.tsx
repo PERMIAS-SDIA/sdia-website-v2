@@ -7,11 +7,9 @@ import {
   Users,
   Calendar,
   Award,
-  Heart,
   Target,
   Eye,
   ArrowRight,
-  Play,
   ChevronDown,
 } from "lucide-react";
 import Image from "next/image";
@@ -133,8 +131,7 @@ export default function HomePage() {
           </h1>
 
           <p className="mx-auto mb-8 max-w-3xl text-xl leading-relaxed text-gray-200 md:text-2xl">
-            Connecting Indonesian students and celebrating our rich culture
-            through community, tradition, and friendship at San Diego.
+            Connecting Indonesian students and anyone interested in Indonesian culture at San Diego.
           </p>
 
           {/* Social Media Icons */}
@@ -175,7 +172,16 @@ export default function HomePage() {
               >
                 See Upcoming Events
                 <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
-                
+              </Button>
+            </a>
+
+            <a href="/wiki">
+              <Button
+                size="lg"
+                className="group rounded-full bg-primary-100 px-8 py-4 text-lg font-semibold text-black shadow-lg transition-all duration-300 hover:bg-primary-150 hover:shadow-xl"
+              >
+                New student? Check out the wiki!
+                <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
               </Button>
             </a>
           </div>
@@ -198,8 +204,7 @@ export default function HomePage() {
               Mission & Vision
             </h2>
             <p className="mx-auto max-w-3xl text-xl text-gray-600">
-              Guided by our commitment to cultural preservation and community
-              building
+              Guided by our commitment to building community.
             </p>
           </div>
 
@@ -210,9 +215,9 @@ export default function HomePage() {
                 Our Mission
               </h3>
               <p className="text-lg leading-relaxed text-gray-700">
-                Our mission at Permias SDIA is to foster a rich community that 
+                Our mission at PERMIAS SDIA is to foster a rich community that 
                 celebrates Indonesian culture, promoting academic success and most 
-                of all, cultural connection across all students at UCSD.
+                of all, friendship across all Indonesian students at San Diego.
               </p>
               <p className="text-lg leading-relaxed text-gray-700">
                 If any of these values speak to you, come join our organization through
@@ -226,7 +231,7 @@ export default function HomePage() {
                 <div>
                   <h4 className="font-semibold text-gray-800">Our Mission</h4>
                   <p className="text-gray-600">
-                    Building community through culture
+                    Building an Indonesian community in San Diego.
                   </p>
                 </div>
               </div>
@@ -266,10 +271,11 @@ export default function HomePage() {
                 Our Vision
               </h3>
               <p className="text-lg leading-relaxed text-gray-700">
-                At SDIA, we envision a future of students proud of their cultural 
-                heritage and background. As we build a sense of community and belonging 
-                among ourselves, we hope to inspire Indonesian students to appreciate the 
-                deep cultural ties that connect us all, even as we live oceans away from home!
+                At PERMIAS SDIA, we envision a strong Indonesian student community in San Diego. 
+                As we build a sense of friendship and belonging 
+                among ourselves, we hope to inspire Indonesian students 
+                to help each other and appreciate our 
+                ties, even as we live oceans away from home!
               </p>
               <div className="flex items-center space-x-4 pt-4">
                 <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-gradient-to-br from-secondary-400 to-secondary-500">
@@ -278,7 +284,7 @@ export default function HomePage() {
                 <div>
                   <h4 className="font-semibold text-gray-800">Our Vision</h4>
                   <p className="text-gray-600">
-                    Inspiring cultural understanding
+                    Inspiring friendship and community.
                   </p>
                 </div>
               </div>
@@ -311,7 +317,7 @@ export default function HomePage() {
               suffix="+"
             />
             <StatCard icon={Calendar} value={9} suffix="+" label="Events Each Year" />
-            <StatCard icon={Award} value={6} label="Years Strong" />
+            <StatCard icon={Award} value={10} suffix="+" label="Years Strong" />
           </div>
         </div>
       </section>

@@ -38,15 +38,15 @@ export default function AboutPage() {
           </Badge>
 
           <h1 className="mb-6 text-5xl font-bold leading-tight text-white md:text-6xl">
-            Our Story &
-            <span className="block bg-gradient-to-r from-secondary-300 to-secondary-500 bg-clip-text text-transparent">
-              Heritage
+            Our
+            <span className="bg-gradient-to-r from-secondary-300 to-secondary-500 bg-clip-text text-transparent">
+             &nbsp;Story
             </span>
           </h1>
 
           <p className="mx-auto mb-8 max-w-3xl text-xl leading-relaxed text-gray-200 md:text-2xl">
             Celebrating Indonesian culture and building lasting connections at
-            San Diego since 2019.
+            San Diego since 2015.
           </p>
         </div>
       </section>
@@ -74,39 +74,53 @@ export default function AboutPage() {
             <div className="space-y-12">
               {[
                 {
-                  year: "2019",
+                  year: "Before 2015",
+                  title: "Origins",
+                  description:
+                    "Back then, the Indonesian Student Association at San Diego was named SADIS.",
+                  side: "right",
+                },
+                {
+                  year: "2015",
                   title: "Foundation",
                   description:
-                    "The UCSD Indonesian Club was founded by a group of 10 passionate Indonesian students who wanted to create a home away from home.",
+                    "PERMIAS SDIA was formed by a group of 10 passionate Indonesian students who wanted to create a home away from home. Also the date of our first Instagram post!",
                   side: "left",
                 },
                 {
-                  year: "2020",
-                  title: "Covid Era",
+                  year: "2016",
+                  title: "First Party",
                   description:
-                    "SDIA had to transition to virtual meetings during the pandemic, which led them to start the Zoom New Student Info meetings.",
+                    "PERMIAS SDIA hosted its first party during Halloween.",
                   side: "right",
+                },
+                {
+                  year: "2020", 
+                  title: "COVID-19 Era",
+                  description:
+                    "PERMIAS SDIA had to transition to virtual meetings during the pandemic, which led them to start the Zoom New Student Info meetings.",
+                  side: "left",
                 },
                 {
                   year: "2021",
                   title: "Masks On",
                   description:
                     "With only 10 officers, they transitioned from virtual to in-person events, hosting Welcoming Party 2021 and Smores at the Shores!",
-                  side: "left",
+                  side: "right",
                 },
                 {
                   year: "2022",
                   title: "Start of SDIA Cup",
                   description:
                     "Present day PORMICA began here! This year was the start of SDIA Cup, which hosted Badminton, Soccer, and Basketball for Indonesian students.",
-                  side: "right",
+                  side: "left",
                 },
                 {
                   year: "2023",
                   title: "Start of Selera SDIA",
                   description:
-                    "Realizing that students often felt homesick and craved Indonesian food, SDIA decided to bring it right to them with Selera SDIA!",
-                  side: "left",
+                    "Realizing that students often felt homesick and craved Indonesian food, PERMIAS SDIA decided to bring it right to them with Selera SDIA!",
+                  side: "right",
                 },
               ].map((item, index) => (
                 <div
@@ -169,9 +183,9 @@ export default function AboutPage() {
               },
               {
                 icon: Globe,
-                title: "Cultural Pride",
+                title: "Cultural Celebration",
                 description:
-                  "Celebrating and preserving Indonesian heritage while sharing it with the broader UCSD community.",
+                  "Celebrating and preserving Indonesian culture while sharing it with the broader UCSD community.",
               },
               {
                 icon: Users,
@@ -212,7 +226,7 @@ export default function AboutPage() {
               What We Do
             </h2>
             <p className="mx-auto max-w-3xl text-xl text-gray-600">
-              From cultural celebrations to academic support, we offer valuable
+              From social gatherings to academic support, we offer valuable
               opportunities for growth and connection
             </p>
           </div>
@@ -225,12 +239,12 @@ export default function AboutPage() {
                   {
                     title: "Social Gatherings",
                     description:
-                      "Regular meetups, game nights, and social events that help members build lasting friendships and connections.",
+                      "Regular meetups, sport matches, and social events that help members build lasting friendships and connections.",
                   },
                   {
-                    title: "Career Networking",
+                    title: "Career Development",
                     description:
-                      "Study groups, mentorship programs, and academic workshops to help members succeed in their studies.",
+                      "Study groups and career workshops to help members succeed in their future endeavors.",
                   },
                 ].map((activity, index) => (
                   <div key={index} className="flex items-start space-x-4">

@@ -8,6 +8,8 @@ export interface TeamRecord {
   pic: string;
   second_pic: string;
   description: string;
+  department: string;
+  isHead: boolean;
 }
 
 export interface AlumniRecord {
