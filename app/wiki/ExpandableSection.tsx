@@ -15,7 +15,7 @@ export default function ExpandableSection({ title, children }: ExpandableSection
     <div className="border border-gray-200 rounded-2xl mb-4 shadow-sm max-w-4xl mx-auto">
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="flex w-full items-center justify-between p-4 text-left font-semibold text-lg hover:bg-gray-50 transition"
+        className="flex rounded-2xl w-full items-center justify-between p-4 text-left font-semibold text-lg hover:bg-gray-50 transition"
       >
         {title}
         {isOpen ? (

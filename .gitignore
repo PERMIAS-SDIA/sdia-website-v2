@@ -43,3 +43,5 @@ next-env.d.ts
 
 # database sql files
 scripts/data.db.sql
+
+/private

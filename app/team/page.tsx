@@ -90,10 +90,6 @@ export default function TeamPage() {
         </div>
 
         <div className="relative z-10 mx-auto max-w-4xl px-4 text-center">
-          <Badge className="mb-6 bg-secondary-400 px-4 py-2 text-sm font-medium text-secondary-900 hover:bg-secondary-500">
-            Meet Our Leaders
-          </Badge>
-
           <h1 className="mb-6 text-5xl font-bold leading-tight text-white md:text-6xl">
             Our Amazing
             <span className="block bg-gradient-to-r from-secondary-300 to-secondary-500 bg-clip-text text-transparent">

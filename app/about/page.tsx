@@ -51,13 +51,125 @@ export default function AboutPage() {
         </div>
       </section>
 
+            {/* What We Do Section */}
+            <section className="px-4 py-20">
+        <div className="mx-auto max-w-6xl">
+          <div className="mb-16 text-center">
+            <h2 className="mb-4 text-4xl font-bold text-gray-800 md:text-5xl">
+              What We Do
+            </h2>
+            <p className="mx-auto max-w-3xl text-xl text-gray-600">
+              Social gatherings, sport matches, and academic support for Indonesian students at San Diego.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2">
+            <div>
+              <div className="space-y-8">
+                {[
+                  
+                  {
+                    title: "Social Gatherings",
+                    description:
+                      "Regular meetups, sport matches, and social events that help members build lasting friendships and connections.",
+                  },
+                  {
+                    title: "Career Development",
+                    description:
+                      "Study groups and career workshops to help members succeed in their future endeavors.",
+                  },
+                ].map((activity, index) => (
+                  <div key={index} className="flex items-start space-x-4">
+                    <div className="mt-1 flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-secondary-400 to-secondary-500">
+                      <ArrowRight className="h-4 w-4 text-white" />
+                    </div>
+                    <div>
+                      <h3 className="mb-2 text-xl font-bold text-gray-800">
+                        {activity.title}
+                      </h3>
+                      <p className="leading-relaxed text-gray-600">
+                        {activity.description}
+                      </p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="relative">
+              <Image
+                src="/groupgrad2024.JPEG?height=600&width=500"
+                alt="Indonesian Club Activities"
+                width={500}
+                height={600}  
+                className="rounded-lg shadow-xl"
+              />
+              <div className="absolute -bottom-6 -right-6 h-32 w-32 rounded-full bg-gradient-to-br from-secondary-400 to-secondary-500 opacity-20"></div>
+              <div className="absolute -left-6 -top-6 h-24 w-24 rounded-full bg-gradient-to-br from-primary-400 to-primary-500 opacity-20"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      
+      {/* Values Section */}
+      <section className="bg-gradient-to-r from-primary-50 via-white to-secondary-50 py-20">
+        <div className="mx-auto max-w-6xl px-4">
+          <div className="mb-16 text-center">
+            <h2 className="mb-4 text-4xl font-bold text-gray-800 md:text-5xl">
+              Our Values
+            </h2>
+            <p className="mx-auto max-w-3xl text-xl text-gray-600">
+              The principles that guide our community and activities
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+            {[
+              {
+                icon: Heart,
+                title: "Community",
+                description:
+                  "Building strong bonds and creating a supportive family atmosphere for all members.",
+              },
+              {
+                icon: Globe,
+                title: "Cultural Celebration",
+                description:
+                  "Celebrating and preserving Indonesian culture while sharing it with the broader UCSD community.",
+              },
+              {
+                icon: Users,
+                title: "Inclusivity",
+                description:
+                  "Welcoming students from all backgrounds who appreciate Indonesian culture and values.",
+              },
+            ].map((value, index) => (
+              <Card
+                key={index}
+                className="group transition-all duration-500 hover:-translate-y-2 hover:shadow-xl"
+              >
+                <CardContent className="p-8 text-center">
+                  <div className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-br from-primary-500 to-primary-600 transition-transform duration-300 group-hover:scale-110">
+                    <value.icon className="h-8 w-8 text-white" />
+                  </div>
+                  <h3 className="mb-4 text-xl font-bold text-gray-800">
+                    {value.title}
+                  </h3>
+                  <p className="leading-relaxed text-gray-600">
+                    {value.description}
+                  </p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+      
       {/* History Timeline */}
       <section className="px-4 py-20">
         <div className="mx-auto max-w-6xl">
           <div className="mb-16 text-center">
-            <Badge className="mb-4 bg-primary-100 text-primary-800 hover:bg-primary-200">
-              Our Journey
-            </Badge>
             <h2 className="mb-4 text-4xl font-bold text-gray-800 md:text-5xl">
               Club History
             </h2>
@@ -158,126 +270,8 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Values Section */}
-      <section className="bg-gradient-to-r from-primary-50 via-white to-secondary-50 py-20">
-        <div className="mx-auto max-w-6xl px-4">
-          <div className="mb-16 text-center">
-            <Badge className="mb-4 bg-secondary-100 text-secondary-800 hover:bg-secondary-200">
-              Our Values
-            </Badge>
-            <h2 className="mb-4 text-4xl font-bold text-gray-800 md:text-5xl">
-              What We Stand For
-            </h2>
-            <p className="mx-auto max-w-3xl text-xl text-gray-600">
-              The principles that guide our community and activities
-            </p>
-          </div>
 
-          <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-            {[
-              {
-                icon: Heart,
-                title: "Community",
-                description:
-                  "Building strong bonds and creating a supportive family atmosphere for all members.",
-              },
-              {
-                icon: Globe,
-                title: "Cultural Celebration",
-                description:
-                  "Celebrating and preserving Indonesian culture while sharing it with the broader UCSD community.",
-              },
-              {
-                icon: Users,
-                title: "Inclusivity",
-                description:
-                  "Welcoming students from all backgrounds who appreciate Indonesian culture and values.",
-              },
-            ].map((value, index) => (
-              <Card
-                key={index}
-                className="group transition-all duration-500 hover:-translate-y-2 hover:shadow-xl"
-              >
-                <CardContent className="p-8 text-center">
-                  <div className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-br from-primary-500 to-primary-600 transition-transform duration-300 group-hover:scale-110">
-                    <value.icon className="h-8 w-8 text-white" />
-                  </div>
-                  <h3 className="mb-4 text-xl font-bold text-gray-800">
-                    {value.title}
-                  </h3>
-                  <p className="leading-relaxed text-gray-600">
-                    {value.description}
-                  </p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
 
-      {/* What We Do Section */}
-      <section className="px-4 py-20">
-        <div className="mx-auto max-w-6xl">
-          <div className="mb-16 text-center">
-            <Badge className="mb-4 bg-primary-100 text-primary-800 hover:bg-primary-200">
-              Our Activities
-            </Badge>
-            <h2 className="mb-4 text-4xl font-bold text-gray-800 md:text-5xl">
-              What We Do
-            </h2>
-            <p className="mx-auto max-w-3xl text-xl text-gray-600">
-              From social gatherings to academic support, we offer valuable
-              opportunities for growth and connection
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2">
-            <div>
-              <div className="space-y-8">
-                {[
-                  
-                  {
-                    title: "Social Gatherings",
-                    description:
-                      "Regular meetups, sport matches, and social events that help members build lasting friendships and connections.",
-                  },
-                  {
-                    title: "Career Development",
-                    description:
-                      "Study groups and career workshops to help members succeed in their future endeavors.",
-                  },
-                ].map((activity, index) => (
-                  <div key={index} className="flex items-start space-x-4">
-                    <div className="mt-1 flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-secondary-400 to-secondary-500">
-                      <ArrowRight className="h-4 w-4 text-white" />
-                    </div>
-                    <div>
-                      <h3 className="mb-2 text-xl font-bold text-gray-800">
-                        {activity.title}
-                      </h3>
-                      <p className="leading-relaxed text-gray-600">
-                        {activity.description}
-                      </p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            <div className="relative">
-              <Image
-                src="/groupgrad2024.JPEG?height=600&width=500"
-                alt="Indonesian Club Activities"
-                width={500}
-                height={600}  
-                className="rounded-lg shadow-xl"
-              />
-              <div className="absolute -bottom-6 -right-6 h-32 w-32 rounded-full bg-gradient-to-br from-secondary-400 to-secondary-500 opacity-20"></div>
-              <div className="absolute -left-6 -top-6 h-24 w-24 rounded-full bg-gradient-to-br from-primary-400 to-primary-500 opacity-20"></div>
-            </div>
-          </div>
-        </div>
-      </section>
 
       <CTA />
       <Footer />

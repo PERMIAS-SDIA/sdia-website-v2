@@ -13,19 +13,17 @@ export default function WikiPage() {
           </p>
         </div>
       </section>
-      
-      <ExpandableSection title="What does PERMIAS SDIA stand for?">
-        PERMIAS SDIA stands for Persatuan Mahasiswa Indonesia Seluruh Amerika Serikat. SDIA stands for San Diego Indonesian Association.
-        So PERMIAS SDIA is PERMIAS's branch in San Diego.
-      </ExpandableSection>
 
       <ExpandableSection title="Is there a WhatsApp group?">
         Yes! You'll have to contact us either by email or Instagram if you want an invite.
       </ExpandableSection>
 
       <ExpandableSection title="Recommended Apartments">
-        All these apartments are quite popular with Indonesian students and are below a 20 minute bus ride to UCSD. They tend to cost $1600/month/person on average. Cheaper options would probably require a car to get to school.
-        Could be cheaper if you contact someone to take over their lease or get a referral!
+        <p>All these apartments are quite popular with Indonesian students and are below a 20 minute bus ride 
+          to UCSD. They tend to cost $1600/month/person on average. 
+          Anything cheaper than that would probably be far away from campus and would require a car.
+          <br/>Try to contact someone to take over their lease or get a referral! It could be cheaper!
+        </p>
         <ul className="list-disc list-inside space-y-2">
           <li><strong>Costa Verde</strong> - 10 min walk to UTC. Around $3400/month total for a 2 bedroom</li>
           <li><strong>La Regencia</strong> – 5 min walk to a grocery store nearby.</li>
@@ -35,48 +33,10 @@ export default function WikiPage() {
       </ExpandableSection>
 
       <ExpandableSection title="Where can I get groceries?">
-        There's a <b>Ralphs</b> and <b>Trader Joe's</b> 15 min bus ride from UCSD. If you have a car, <b>Costco</b> tends to be cheaper and has way more stuff. Get a Costco membership!
+        There's a <b>Ralphs</b> and <b>Trader Joe's</b> 15 min bus ride from UCSD. If you have a car, we recommend getting a <b>Costco</b> membership since it tends to be cheaper and has way more stuff.
       </ExpandableSection>
 
-      <ExpandableSection title="I'm bored. What can I do around here?">
-          <ul className="space-y-2">
-
-              <li className="text-lg font-bold">Tourist Spots🏖️</li>
-              Filled with great beaches and great weather, SD is a popular tourist destination. Here are some touristy spots:
-              <ul className="list-disc list-inside gap-4">
-                  <li><b>San Diego Zoo</b> - Frequently ranked the best zoo in the world. Worth a visit if you like animals.</li>
-                  <li><b>SeaWorld</b> - Rollercoasters, animal shows, and marine life.</li>
-                  <li><b>Downtown San Diego</b> - Take a stroll around Seaport Village for the sunset then grab dinner at Little Italy.</li>
-                  <li><b>La Jolla Cove</b> - You can see seals here in their natural habitat. Another great sunset spot. You can also go kayaking!</li>
-                  <li><b>Balboa Park</b> - A nice stroll around historical/artistic buildings. Also many museums and gardens.</li>
-              </ul>
-
-              <li className="text-lg font-bold">Hiking🥾</li>
-              San Diego has many great hiking trails. Here's some beginner ones:
-              <ul className="list-disc list-inside gap-4">
-                  <li><b>Torrey Pines State Natural Reserve</b> - You can walk here from UCSD. Relatively flat and great views.</li>
-                  <li><b>Cowles Mountain</b> - Actual mountain but still beginner friendly. You'd need a car to get here. Around 2 hours up and down.</li>
-              </ul>
-
-              <li className="text-lg font-bold">Sports🏃</li>
-              <ul className="list-disc list-inside gap-4">
-                <li><b>Padel</b> - Check out Taktika for padel courts.</li>
-                <li><b>Badminton</b> - Most Indonesian students play at Smash San Diego.</li>
-                <li><b>Surfing</b></li>
-              </ul>
-
-              <li className="text-lg font-bold">Outside SD</li>
-              For your long weekend trips:
-              <ul className="list-disc list-inside gap-4">
-                <li><b>Amusement Parks</b> - Disneyland, Universal Studios, Six Flags, Knott's Berry Farm. All within 2 hour drives or an Amtrak train ride.</li>
-                <li><b>Los Angeles</b></li>
-                <li><b>Joshua Tree National Park</b></li>
-                <li><b>Palm Springs</b></li>
-              </ul>
-          </ul>
-      </ExpandableSection>
-
-      <ExpandableSection title="Food Spots">
+      <ExpandableSection title="Restaurant recommendations?">
           <ul className="space-y-2">
 
               <li className="text-lg font-bold">Indonesian🍛</li>
@@ -88,7 +48,7 @@ export default function WikiPage() {
               </ul>
 
               <li className="text-lg font-bold">Mexican🌮</li>
-              San Diego is famous for its Mexican food. You won't find anything like this back in Indonesia.
+              San Diego is famous for its Mexican food. You won't find Mexican food as good as here back in Indonesia.
               <ul className="list-disc list-inside gap-4">
                   <li><b>Tacos El Gordo</b> - Probably the most famous taco place in San Diego.</li>
                   <li><b>The Taco Stand</b> - Only a 20 min bus ride from UCSD.</li>
@@ -102,7 +62,7 @@ export default function WikiPage() {
 
               <li className="text-lg font-bold">Chinese🥡</li>
               <ul className="list-disc list-inside gap-4">
-                <li><b>Spicy City</b> - Despite its name, they have good non-spicy food as well.</li>
+                <li><b>Spicy City</b> - Mainly Sichuan cuisine. Despite its name, they have good non-spicy food as well.</li>
                 <li><b>Xinjiang</b> - Various skewers.</li>
                 <li><b>YinTang Hotpot</b> - Choose your own ingredients type of hotpot place.</li>
               </ul>
@@ -121,7 +81,7 @@ export default function WikiPage() {
 
               <li className="text-lg font-bold">Japanese🍜</li>
               <ul className="list-disc list-inside gap-4">
-                  <li><b>Ramen Nagi</b> - Right inside UTC. Always busy.</li>
+                  <li><b>Ramen Nagi</b> - Right inside UTC. There's always a long line so try to come early.</li>
                   <li><b>Tajima Ramen Convoy</b></li>
               </ul>
 
@@ -133,8 +93,53 @@ export default function WikiPage() {
           </ul>
       </ExpandableSection>
 
+      <ExpandableSection title="I'm bored. What can I do around here?">
+          <ul className="space-y-2">
+
+              <li className="text-lg font-bold">Tourist Spots🏖️</li>
+              Filled with great beaches and great weather, SD is a popular tourist destination. Here are some touristy spots:
+              <ul className="list-disc list-inside gap-4">
+                  <li><b>San Diego Zoo</b> - Frequently ranked the best zoo in the world. Worth a visit if you like animals.</li>
+                  <li><b>SeaWorld</b> - Rollercoasters, animal shows, and marine life.</li>
+                  <li><b>Downtown San Diego</b> - Take a stroll around Seaport Village for the sunset then grab dinner at Little Italy.</li>
+                  <li><b>La Jolla Cove</b> - You can see seals here in their natural habitat. Another great sunset spot. You can also go kayaking.</li>
+                  <li><b>Balboa Park</b> - A nice stroll around historical/artistic buildings. Also many museums and gardens.</li>
+              </ul>
+
+              <li className="text-lg font-bold">Hiking🥾</li>
+              San Diego has many great hiking trails. Here's some beginner ones:
+              <ul className="list-disc list-inside gap-4">
+                  <li><b>Torrey Pines State Natural Reserve</b> - You can walk here from UCSD. Relatively flat and great views.</li>
+                  <li><b>Cowles Mountain</b> - Actual mountain but still beginner friendly. You'd need a car to get here. Around 2 hours up and down.</li>
+              </ul>
+
+              <li className="text-lg font-bold">Sports🏃</li>
+              <ul className="list-disc list-inside gap-4">
+                <li><b>Padel</b> - Check out Taktika for padel courts.</li>
+                <li><b>Badminton</b> - Most Indonesian students play at Smash San Diego.</li>
+                <li><b>Surfing</b></li>
+              </ul>
+
+              <li className="text-lg font-bold">Outside SD (still in California)</li>
+              For your long weekend trips:
+              <ul className="list-disc list-inside gap-4">
+                <li><b>Amusement Parks</b> - Disneyland, Universal Studios, Six Flags, Knott's Berry Farm. All within 2 hour drives or an Amtrak train ride.</li>
+                <li><b>Los Angeles</b> - 2 hour drive or you can take the Amtrak if you don't have a car.</li>
+                <li><b>Big Bear Lake</b> - Come during the Winter for snowboarding/skiing.</li>
+                <li><b>San Francisco</b> - Flights could cost as low as $50 on a random weekend.</li>
+                <li><b>Joshua Tree National Park</b></li>
+                <li><b>Palm Springs</b></li>
+              </ul>
+          </ul>
+      </ExpandableSection>
+
       <ExpandableSection title="Can I join if I'm not Indonesian?">
-        Yes! Anyone from any background is welcome to join our community, as long as you have an interest in Indonesia. Be sure to check out our upcoming events for the most up-to-date information! 
+        Yes! Anyone from any background is welcome to join our community, as long as you have an interest in Indonesia and modern Indonesian culture. Be sure to check out our upcoming events for the most up-to-date information! 
+      </ExpandableSection>
+
+      <ExpandableSection title="What does PERMIAS SDIA stand for?">
+        PERMIAS SDIA stands for Persatuan Mahasiswa Indonesia Seluruh Amerika Serikat, which is the Indonesian student association for the whole United States. SDIA stands for San Diego Indonesian Association.
+        So PERMIAS SDIA is PERMIAS's branch in San Diego.
       </ExpandableSection>
 
       <Footer />
