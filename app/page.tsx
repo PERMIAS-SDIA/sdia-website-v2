@@ -100,7 +100,7 @@ export default function HomePage() {
         {/* Background Video Placeholder */}
         <div className="absolute inset-0 z-0">
           <Image
-            src="/geisel.jpg?height=1080&width=1920&text=UCSD+Campus+Video"
+            src="/groupwelc2025.webp?height=1080&width=1920&text=UCSD+Campus+Video"
             alt="UCSD Campus"
             fill
             className="object-cover"
