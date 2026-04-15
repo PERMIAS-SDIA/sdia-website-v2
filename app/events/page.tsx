@@ -1,3 +1,4 @@
+// NOTE THAT THIS EVENTS PAGE IS NOT USED AND IS AN OLD VERSION. THE CURRENT EVENTS PAGE SHOWN ON THE WEBSITE IS `events-documentation/page.tsx`
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
