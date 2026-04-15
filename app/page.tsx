@@ -165,12 +165,12 @@ export default function HomePage() {
           </div>
 
           <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
-            <a href="/events">
+            <a href="/events-documentation">
               <Button
                 size="lg"
                 className="group rounded-full bg-primary-600 px-8 py-4 text-lg font-semibold text-white shadow-lg transition-all duration-300 hover:bg-primary-700 hover:shadow-xl"
               >
-                See Upcoming Events
+                See Past Events
                 <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
               </Button>
             </a>

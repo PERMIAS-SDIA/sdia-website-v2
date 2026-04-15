@@ -13,12 +13,12 @@ export default function CTA() {
                 connections
             </p>
                 <div className="flex flex-col justify-center gap-4 sm:flex-row">
-                    <a href="/events">
+                    <a href="/events-documentation">
                     <Button
                     size="lg"
                     className="rounded-full bg-secondary-400 px-8 py-4 text-lg font-semibold text-secondary-900 shadow-lg transition-all duration-300 hover:bg-secondary-500 hover:shadow-xl"
                     >
-                        See Upcoming Events
+                        See Past Events
                     </Button>
                     </a>
 

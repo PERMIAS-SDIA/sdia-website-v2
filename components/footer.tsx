@@ -37,10 +37,10 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href="/events"
+                  href="/events-documentation"
                   className="transition-colors hover:text-secondary-400"
                 >
-                  Events
+                  Event Documentation
                 </Link>
               </li>
               {/* <li>
